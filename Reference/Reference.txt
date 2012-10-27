@@ -1,0 +1,35 @@
+Unistroke Recognizer References
+===============================
+
+  $1 Unistroke Recognizer <http://depts.washington.edu/aimgroup/proj/dollar/>
+  
+  Authors:
+  
+  * Jacob O. Wobbrock, University of Washington
+  * Andrew D. Wilson, Microsoft Research
+  * Yang Li, University of Washington
+
+
+Reference Files
+---------------
+
+  `dollar_tests.html` - test loader for $1 unistroke JavaScript tests
+  
+  `dollar_tests.js` - unit tests for $1 unistroke JavaScript reference implementation
+  
+  `dollar.js` - $1 unistroke JavaScript reference implementation, from <http://depts.washington.edu/aimgroup/proj/dollar/>
+  
+  `Reference.txt` - this file
+
+
+Papers
+------
+
+  "Gestures without Libraries, Toolkits or Training: A $1 Recognizer for User Interface Prototypes"
+   - <http://faculty.washington.edu/wobbrock/pubs/uist-07.1.pdf>
+
+  $1 Psuedocode
+   - <http://depts.washington.edu/aimgroup/proj/dollar/dollar.pdf>
+
+  Protractor Psuedocode
+   - <http://depts.washington.edu/aimgroup/proj/dollar/protractor.pdf>

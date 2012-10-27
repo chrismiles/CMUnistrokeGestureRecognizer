@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8325FAFF1630B125008D36CF /* CMUDStrokeTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325FAFE1630B125008D36CF /* CMUDStrokeTemplateView.m */; };
+		837E28AB160EE14300017FFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AA160EE14300017FFB /* UIKit.framework */; };
+		837E28AD160EE14300017FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AC160EE14300017FFB /* Foundation.framework */; };
+		837E28AF160EE14300017FFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AE160EE14300017FFB /* CoreGraphics.framework */; };
+		837E28B5160EE14300017FFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 837E28B3160EE14300017FFB /* InfoPlist.strings */; };
+		837E28B7160EE14300017FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 837E28B6160EE14300017FFB /* main.m */; };
+		837E28BB160EE14300017FFB /* CMUDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 837E28BA160EE14300017FFB /* CMUDAppDelegate.m */; };
+		837E28BD160EE14300017FFB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 837E28BC160EE14300017FFB /* Default.png */; };
+		837E28BF160EE14300017FFB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 837E28BE160EE14300017FFB /* Default@2x.png */; };
+		837E28C1160EE14300017FFB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 837E28C0160EE14300017FFB /* Default-568h@2x.png */; };
+		837E28C4160EE14300017FFB /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837E28C2160EE14300017FFB /* MainStoryboard_iPhone.storyboard */; };
+		837E28C7160EE14300017FFB /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837E28C5160EE14300017FFB /* MainStoryboard_iPad.storyboard */; };
+		837E28CA160EE14300017FFB /* CMUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837E28C9160EE14300017FFB /* CMUDViewController.m */; };
+		83CBA8BA1620127F00183E63 /* CMUDDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CBA8B91620127F00183E63 /* CMUDDrawView.m */; };
+		83CBA8D116214E7700183E63 /* libCMUnistrokeGestureRecognizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CBA8CB16214E5000183E63 /* libCMUnistrokeGestureRecognizer.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83CBA8CA16214E5000183E63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBA8C516214E5000183E63 /* CMUnistrokeGestureRecognizer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 837E286D160EE03600017FFB;
+			remoteInfo = CMUnistrokeGestureRecognizer;
+		};
+		83CBA8CC16214E5000183E63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBA8C516214E5000183E63 /* CMUnistrokeGestureRecognizer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 837E287E160EE03600017FFB;
+			remoteInfo = CMUnistrokeGestureRecognizerTests;
+		};
+		83CBA8CF16214E7000183E63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBA8C516214E5000183E63 /* CMUnistrokeGestureRecognizer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 837E286C160EE03600017FFB;
+			remoteInfo = CMUnistrokeGestureRecognizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8325FAF2162FF9FC008D36CF /* CMUDTemplatePaths.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMUDTemplatePaths.h; sourceTree = "<group>"; };
+		8325FAFD1630B125008D36CF /* CMUDStrokeTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDStrokeTemplateView.h; sourceTree = "<group>"; };
+		8325FAFE1630B125008D36CF /* CMUDStrokeTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDStrokeTemplateView.m; sourceTree = "<group>"; };
+		83787194163B6C69002A9A6F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		837E28A6160EE14300017FFB /* CMUnistrokeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMUnistrokeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		837E28AA160EE14300017FFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		837E28AC160EE14300017FFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		837E28AE160EE14300017FFB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		837E28B2160EE14300017FFB /* CMUnistrokeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CMUnistrokeDemo-Info.plist"; sourceTree = "<group>"; };
+		837E28B4160EE14300017FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		837E28B6160EE14300017FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		837E28B8160EE14300017FFB /* CMUnistrokeDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMUnistrokeDemo-Prefix.pch"; sourceTree = "<group>"; };
+		837E28B9160EE14300017FFB /* CMUDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMUDAppDelegate.h; sourceTree = "<group>"; };
+		837E28BA160EE14300017FFB /* CMUDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMUDAppDelegate.m; sourceTree = "<group>"; };
+		837E28BC160EE14300017FFB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		837E28BE160EE14300017FFB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		837E28C0160EE14300017FFB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		837E28C3160EE14300017FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		837E28C6160EE14300017FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		837E28C8160EE14300017FFB /* CMUDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMUDViewController.h; sourceTree = "<group>"; };
+		837E28C9160EE14300017FFB /* CMUDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMUDViewController.m; sourceTree = "<group>"; };
+		837E28DA160EE27F00017FFB /* libCMUnistrokeGestureRecognizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCMUnistrokeGestureRecognizer.a; path = "../CMUnistrokeGestureRecognizer/build/Release-iphoneos/libCMUnistrokeGestureRecognizer.a"; sourceTree = "<group>"; };
+		83CBA8B81620127F00183E63 /* CMUDDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDDrawView.h; sourceTree = "<group>"; };
+		83CBA8B91620127F00183E63 /* CMUDDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDDrawView.m; sourceTree = "<group>"; };
+		83CBA8C516214E5000183E63 /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = ../CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		837E28A3160EE14300017FFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CBA8D116214E7700183E63 /* libCMUnistrokeGestureRecognizer.a in Frameworks */,
+				837E28AB160EE14300017FFB /* UIKit.framework in Frameworks */,
+				837E28AD160EE14300017FFB /* Foundation.framework in Frameworks */,
+				837E28AF160EE14300017FFB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		837E289B160EE14300017FFB = {
+			isa = PBXGroup;
+			children = (
+				837E28B0160EE14300017FFB /* CMUnistrokeDemo */,
+				83CBA8CE16214E5B00183E63 /* libs */,
+				837E28A9160EE14300017FFB /* Frameworks */,
+				837E28A7160EE14300017FFB /* Products */,
+				83787194163B6C69002A9A6F /* LICENSE.txt */,
+			);
+			sourceTree = "<group>";
+		};
+		837E28A7160EE14300017FFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				837E28A6160EE14300017FFB /* CMUnistrokeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		837E28A9160EE14300017FFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				837E28DA160EE27F00017FFB /* libCMUnistrokeGestureRecognizer.a */,
+				837E28AA160EE14300017FFB /* UIKit.framework */,
+				837E28AC160EE14300017FFB /* Foundation.framework */,
+				837E28AE160EE14300017FFB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		837E28B0160EE14300017FFB /* CMUnistrokeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				837E28B9160EE14300017FFB /* CMUDAppDelegate.h */,
+				837E28BA160EE14300017FFB /* CMUDAppDelegate.m */,
+				837E28C2160EE14300017FFB /* MainStoryboard_iPhone.storyboard */,
+				837E28C5160EE14300017FFB /* MainStoryboard_iPad.storyboard */,
+				8325FAF2162FF9FC008D36CF /* CMUDTemplatePaths.h */,
+				837E28C8160EE14300017FFB /* CMUDViewController.h */,
+				837E28C9160EE14300017FFB /* CMUDViewController.m */,
+				83CBA8B81620127F00183E63 /* CMUDDrawView.h */,
+				83CBA8B91620127F00183E63 /* CMUDDrawView.m */,
+				8325FAFD1630B125008D36CF /* CMUDStrokeTemplateView.h */,
+				8325FAFE1630B125008D36CF /* CMUDStrokeTemplateView.m */,
+				837E28B1160EE14300017FFB /* Supporting Files */,
+			);
+			path = CMUnistrokeDemo;
+			sourceTree = "<group>";
+		};
+		837E28B1160EE14300017FFB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				837E28B2160EE14300017FFB /* CMUnistrokeDemo-Info.plist */,
+				837E28B3160EE14300017FFB /* InfoPlist.strings */,
+				837E28B6160EE14300017FFB /* main.m */,
+				837E28B8160EE14300017FFB /* CMUnistrokeDemo-Prefix.pch */,
+				837E28BC160EE14300017FFB /* Default.png */,
+				837E28BE160EE14300017FFB /* Default@2x.png */,
+				837E28C0160EE14300017FFB /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83CBA8C616214E5000183E63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83CBA8CB16214E5000183E63 /* libCMUnistrokeGestureRecognizer.a */,
+				83CBA8CD16214E5000183E63 /* CMUnistrokeGestureRecognizerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83CBA8CE16214E5B00183E63 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				83CBA8C516214E5000183E63 /* CMUnistrokeGestureRecognizer.xcodeproj */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		837E28A5160EE14300017FFB /* CMUnistrokeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 837E28CD160EE14300017FFB /* Build configuration list for PBXNativeTarget "CMUnistrokeDemo" */;
+			buildPhases = (
+				837E28A2160EE14300017FFB /* Sources */,
+				837E28A3160EE14300017FFB /* Frameworks */,
+				837E28A4160EE14300017FFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83CBA8D016214E7000183E63 /* PBXTargetDependency */,
+			);
+			name = CMUnistrokeDemo;
+			productName = CMUnistrokeDemo;
+			productReference = 837E28A6160EE14300017FFB /* CMUnistrokeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		837E289D160EE14300017FFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CMUD;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Chris Miles";
+			};
+			buildConfigurationList = 837E28A0160EE14300017FFB /* Build configuration list for PBXProject "CMUnistrokeDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 837E289B160EE14300017FFB;
+			productRefGroup = 837E28A7160EE14300017FFB /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 83CBA8C616214E5000183E63 /* Products */;
+					ProjectRef = 83CBA8C516214E5000183E63 /* CMUnistrokeGestureRecognizer.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				837E28A5160EE14300017FFB /* CMUnistrokeDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		83CBA8CB16214E5000183E63 /* libCMUnistrokeGestureRecognizer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCMUnistrokeGestureRecognizer.a;
+			remoteRef = 83CBA8CA16214E5000183E63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		83CBA8CD16214E5000183E63 /* CMUnistrokeGestureRecognizerTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CMUnistrokeGestureRecognizerTests.octest;
+			remoteRef = 83CBA8CC16214E5000183E63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		837E28A4160EE14300017FFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				837E28B5160EE14300017FFB /* InfoPlist.strings in Resources */,
+				837E28BD160EE14300017FFB /* Default.png in Resources */,
+				837E28BF160EE14300017FFB /* Default@2x.png in Resources */,
+				837E28C1160EE14300017FFB /* Default-568h@2x.png in Resources */,
+				837E28C4160EE14300017FFB /* MainStoryboard_iPhone.storyboard in Resources */,
+				837E28C7160EE14300017FFB /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		837E28A2160EE14300017FFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				837E28B7160EE14300017FFB /* main.m in Sources */,
+				837E28BB160EE14300017FFB /* CMUDAppDelegate.m in Sources */,
+				837E28CA160EE14300017FFB /* CMUDViewController.m in Sources */,
+				83CBA8BA1620127F00183E63 /* CMUDDrawView.m in Sources */,
+				8325FAFF1630B125008D36CF /* CMUDStrokeTemplateView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83CBA8D016214E7000183E63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CMUnistrokeGestureRecognizer;
+			targetProxy = 83CBA8CF16214E7000183E63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		837E28B3160EE14300017FFB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				837E28B4160EE14300017FFB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		837E28C2160EE14300017FFB /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				837E28C3160EE14300017FFB /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		837E28C5160EE14300017FFB /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				837E28C6160EE14300017FFB /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		837E28CB160EE14300017FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wselector";
+			};
+			name = Debug;
+		};
+		837E28CC160EE14300017FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "-Wselector";
+			};
+			name = Release;
+		};
+		837E28CE160EE14300017FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CMUnistrokeDemo/CMUnistrokeDemo-Prefix.pch";
+				INFOPLIST_FILE = "CMUnistrokeDemo/CMUnistrokeDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		837E28CF160EE14300017FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CMUnistrokeDemo/CMUnistrokeDemo-Prefix.pch";
+				INFOPLIST_FILE = "CMUnistrokeDemo/CMUnistrokeDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		837E28A0160EE14300017FFB /* Build configuration list for PBXProject "CMUnistrokeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				837E28CB160EE14300017FFB /* Debug */,
+				837E28CC160EE14300017FFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		837E28CD160EE14300017FFB /* Build configuration list for PBXNativeTarget "CMUnistrokeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				837E28CE160EE14300017FFB /* Debug */,
+				837E28CF160EE14300017FFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 837E289D160EE14300017FFB /* Project object */;
+}
