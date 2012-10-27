@@ -191,9 +191,15 @@ CMURResultNew(char *name, float score)
 {
     CMURResultRef result = malloc(sizeof(struct _CMURResult));
     
-    size_t nameSize = strlen(name);
-    result->name = calloc(nameSize+1, sizeof(char));
-    strncpy(result->name, name, nameSize);
+    if (name) {
+	size_t nameSize = strlen(name);
+	result->name = calloc(nameSize+1, sizeof(char));
+	strncpy(result->name, name, nameSize);
+    }
+    else {
+	result->name = NULL;
+    }
+    
     result->score = score;
     
     return result;
