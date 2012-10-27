@@ -80,6 +80,10 @@ unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates
     float b = MAXFLOAT;
     CMURTemplateRef bestTemplate = NULL;
     
+    if (path->length < 2) {
+	return NULL;
+    }
+    
     CMURPathRef resampledPath = unistrokeRecognizerResample(path, kDefaultPathSampleSize);
 
     float radians = unistrokeRecognizerIndicativeAngle(resampledPath);
