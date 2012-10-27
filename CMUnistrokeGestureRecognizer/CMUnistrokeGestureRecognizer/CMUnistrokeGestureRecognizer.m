@@ -143,7 +143,7 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
     CMURPathDelete(path);
     
     BOOL isRecognized;
-    if (result) {
+    if (result && result->score >= self.minimumScoreThreshold) {
 	isRecognized = YES;
 	self.result = [[CMUnistrokeGestureResult alloc] initWithName:[NSString stringWithCString:result->name encoding:NSUTF8StringEncoding] score:result->score];
 	CMUGRLog(@"Recognized: result->score = %f result->name = '%s'", result->score, result->name);
