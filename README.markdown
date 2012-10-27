@@ -2,7 +2,7 @@ $1 Unistroke Gesture Recognizer for iOS
 =======================================
 
 [CMUnistrokeGestureRecognizer][1] is a port of the [$1 Unistroke Recognizer][2]
-to iOS by Chris Miles.
+(aka Dollar Gesture Recognizer) to iOS by Chris Miles.
 
 [1]: https://github.com/chrismiles/CMUnistrokeGestureRecognizer "CMUnistrokeGestureRecognizer"
 [2]: http://depts.washington.edu/aimgroup/proj/dollar/ "$1 Unistroke Recognizer"
@@ -14,7 +14,8 @@ The $1 Unistroke Recognizer was originally authored by:
   * Yang Li, University of Washington
 
 CMUnistrokeGestureRecognizer is a UIGestureRecognizer subclass, able to recognize
-any number of unistroke gestures configured by the user.
+any number of unistroke gestures configured by the user.  Stroke paths are registered
+as UIBezierPath objects, making it easy to create and display paths.
 
 The core unistroke recognizer algorithm is written in C, although uses GLKVector2
 and GLKMath for high performance vector math on iOS devices. As such, the GLKit
