@@ -25,13 +25,27 @@ CMUnistrokeGestureRecognizer is open source, released under an MIT license.
 
 A demo iOS application is included, showing how CMUnistrokeGestureRecognizer can be used
 and containing all the test strokes used by the algorithm authors. The demo app is open
-source and released under an MIT license.
+source and released under a MIT license.
+
+
+Support
+-------
+
+CMUnistrokeGestureRecognizer is provided open source with no warranty and no guarantee
+of support. However, best effort is made to address [issues][3] raised on Github.
+
+If you would like assistance with integrating CMUnistrokeGestureRecognizer or modifying
+it for your needs, contact the author Chris Miles <miles.chris@gmail.com> for consulting
+opportunities.
+
+[3]: https://github.com/chrismiles/CMUnistrokeGestureRecognizer/issues "CMUnistrokeGestureRecognizer issues on Github"
 
 
 License
 -------
 
-CMUnistrokeGestureRecognizer is released open source under a MIT license.
+CMUnistrokeGestureRecognizer is Copyright (c) Chris Miles 2012 and released
+open source under a MIT license.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
