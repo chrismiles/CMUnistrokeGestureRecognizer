@@ -46,7 +46,7 @@
     STAssertEquals(templates->length, (unsigned int)0, @"Incorrect initial templates length");
     
     CMURPathRef path1 = CMURPathNew();
-    CMURTemplatesAdd(templates, "template1", path1);
+    CMURTemplatesAdd(templates, "template1", path1, NULL);
     CMURPathDelete(path1);
     
     STAssertEquals(templates->length, (unsigned int)1, @"Incorrect templates length after CMURTemplatesAdd()");

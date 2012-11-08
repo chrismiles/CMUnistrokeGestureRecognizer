@@ -69,9 +69,9 @@
     CMURPathAddPoint(templatePath3, 0.0f, 0.0f);
     CMURPathAddPoint(templatePath3, 0.0f, 15.0f);
     
-    CMURTemplatesAdd(templates, "template1", templatePath1);
-    CMURTemplatesAdd(templates, "template2", templatePath2);
-    CMURTemplatesAdd(templates, "template3", templatePath3);
+    CMURTemplatesAdd(templates, "template1", templatePath1, NULL);
+    CMURTemplatesAdd(templates, "template2", templatePath2, NULL);
+    CMURTemplatesAdd(templates, "template3", templatePath3, NULL);
     
     CMURPathDelete(templatePath1); templatePath1 = NULL;
     CMURPathDelete(templatePath2); templatePath2 = NULL;
@@ -84,8 +84,7 @@
     
     {
 	// Disable Protractor (i.e. use Golden Section Search)
-	bool useProtactor = false;
-	CMURResultRef result = unistrokeRecognizePathFromTemplates(path, templates, useProtactor);
+	CMURResultRef result = unistrokeRecognizePathFromTemplates(path, templates, NULL);
 	
 	STAssertEqualsWithAccuracy(result->score, 0.992384f, FloatComparisonAccuracy, @"unistrokeRecognizePathFromTemplates() returned invalid result score");
 	STAssertTrue(strcmp(result->name, "template1") == 0, @"unistrokeRecognizePathFromTemplates() returned invalid result name");
@@ -96,13 +95,15 @@
 
     {
 	// Enable Protractor
-	bool useProtactor = true;
-	CMURResultRef result = unistrokeRecognizePathFromTemplates(path, templates, useProtactor);
+	CMUROptionsRef options = CMUROptionsNew();
+	options->useProtractor = true;
+	CMURResultRef result = unistrokeRecognizePathFromTemplates(path, templates, options);
 	
 	STAssertEqualsWithAccuracy(result->score, 0.987671f, FloatComparisonAccuracy, @"unistrokeRecognizePathFromTemplates() returned invalid result score");
 	STAssertTrue(strcmp(result->name, "template1") == 0, @"unistrokeRecognizePathFromTemplates() returned invalid result name");
 	
 	CMURResultDelete(result);
+	CMUROptionsDelete(options);
     }
     
     CMURTemplatesDelete(templates); templates = NULL;
