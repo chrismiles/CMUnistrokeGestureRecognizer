@@ -40,6 +40,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+	self.contentMode = UIViewContentModeRedraw;
+	
 	self.unistrokeGestureRecognizer = [[CMUnistrokeGestureRecognizer alloc] initWithTarget:self action:@selector(unistrokeGestureRecognizer:)];
 	self.unistrokeGestureRecognizer.unistrokeDelegate = self;
 	[self addGestureRecognizer:self.unistrokeGestureRecognizer];
