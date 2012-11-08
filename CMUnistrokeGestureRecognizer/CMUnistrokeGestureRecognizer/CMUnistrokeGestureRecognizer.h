@@ -40,7 +40,23 @@
 
 @property (nonatomic, weak) id<CMUnistrokeGestureRecognizerDelegate> unistrokeDelegate;
 
-@property (nonatomic, assign) float minimumScoreThreshold;	// 0.0 - 1.0
+/** Minimum score required to successfully register a gesture as recognized.
+    i.e. recognition sensitivity.
+    Expects a value between 0.0 and 1.0.
+ */
+@property (nonatomic, assign) float minimumScoreThreshold;
+
+/** Enables the Protractor method for calculating difference between gestures.
+    The Protractor method can be faster, but results may vary.
+    Defaults to not enabled.
+ */
+@property (nonatomic, assign) BOOL protactorMethodEnabled;
+
+/** Determines whether gesture rotations are normalised.
+    When enabled, gestures will be normalised to the same angle before
+    recognition is attempted.
+    Defaults to enabled.
+ */
 @property (nonatomic, assign) BOOL rotationInvarianceEnabled;	// default: YES
 
 @property (nonatomic, strong, readonly) CMUnistrokeGestureResult *result;

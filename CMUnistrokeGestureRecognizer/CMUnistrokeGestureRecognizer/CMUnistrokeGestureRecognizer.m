@@ -50,6 +50,7 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 
 @implementation CMUnistrokeGestureRecognizer
 
+@dynamic protactorMethodEnabled;
 @dynamic rotationInvarianceEnabled;
 
 
@@ -61,6 +62,7 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 	
 	_options = CMUROptionsNew();
 	_options->useProtractor = false;
+	_options->rotationInvarianceDisabled = false;
     }
     return self;
 }
@@ -133,6 +135,16 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 
 
 #pragma mark - Unistroke recognizer options
+
+- (void)setProtactorMethodEnabled:(BOOL)protactorMethodEnabled
+{
+    _options->useProtractor = protactorMethodEnabled;
+}
+
+- (BOOL)protactorMethodEnabled
+{
+    return _options->useProtractor;
+}
 
 - (void)setRotationInvarianceEnabled:(BOOL)rotationInvarianceEnabled
 {
