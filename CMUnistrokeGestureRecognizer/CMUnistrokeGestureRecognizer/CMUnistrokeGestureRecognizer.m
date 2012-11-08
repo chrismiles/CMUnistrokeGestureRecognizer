@@ -37,6 +37,7 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 #pragma mark - CMUnistrokeGestureRecognizer class extension
 
 @interface CMUnistrokeGestureRecognizer () {
+    CMUROptionsRef _options;
     CMURTemplatesRef _unistrokeTemplates;
 }
 @property (nonatomic, strong, readwrite) CMUnistrokeGestureResult *result;
@@ -49,18 +50,26 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 
 @implementation CMUnistrokeGestureRecognizer
 
+@dynamic rotationInvarianceEnabled;
+
 
 - (id)initWithTarget:(id)target action:(SEL)action
 {
     self = [super initWithTarget:target action:action];
     if (self) {
 	_unistrokeTemplates = CMURTemplatesNew();
+	
+	_options = CMUROptionsNew();
+	_options->useProtractor = false;
     }
     return self;
 }
 
 - (void)dealloc
 {
+    if (_options) {
+	CMUROptionsDelete(_options); _options = NULL;
+    }
     if (_unistrokeTemplates) {
 	CMURTemplatesDelete(_unistrokeTemplates); _unistrokeTemplates = NULL;
     }
@@ -123,6 +132,19 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 }
 
 
+#pragma mark - Unistroke recognizer options
+
+- (void)setRotationInvarianceEnabled:(BOOL)rotationInvarianceEnabled
+{
+    _options->rotationInvarianceDisabled = (! rotationInvarianceEnabled);
+}
+
+- (BOOL)rotationInvarianceEnabled
+{
+    return (! _options->rotationInvarianceDisabled);
+}
+
+
 #pragma mark - Recognize Unistroke
 
 - (void)recognizeUnistroke
@@ -138,8 +160,7 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 - (BOOL)isUnistrokeRecognized
 {
     CMURPathRef path = [self pathFromBezierPath:self.strokePath];
-    bool useProtactor = true;
-    CMURResultRef result = unistrokeRecognizePathFromTemplates(path, _unistrokeTemplates, useProtactor);
+    CMURResultRef result = unistrokeRecognizePathFromTemplates(path, _unistrokeTemplates, _options);
     CMURPathDelete(path);
     
     BOOL isRecognized;
@@ -173,7 +194,7 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 - (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)bezierPath
 {
     CMURPathRef path = [self pathFromBezierPath:bezierPath];
-    CMURTemplatesAdd(_unistrokeTemplates, [name cStringUsingEncoding:NSUTF8StringEncoding], path);
+    CMURTemplatesAdd(_unistrokeTemplates, [name cStringUsingEncoding:NSUTF8StringEncoding], path, _options);
     CMURPathDelete(path);
 }
 

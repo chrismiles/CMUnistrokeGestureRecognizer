@@ -40,7 +40,8 @@
 
 @property (nonatomic, weak) id<CMUnistrokeGestureRecognizerDelegate> unistrokeDelegate;
 
-@property (nonatomic, assign) float minimumScoreThreshold;  // 0.0 - 1.0
+@property (nonatomic, assign) float minimumScoreThreshold;	// 0.0 - 1.0
+@property (nonatomic, assign) BOOL rotationInvarianceEnabled;	// default: YES
 
 @property (nonatomic, strong, readonly) CMUnistrokeGestureResult *result;
 @property (nonatomic, strong, readonly) UIBezierPath *strokePath;

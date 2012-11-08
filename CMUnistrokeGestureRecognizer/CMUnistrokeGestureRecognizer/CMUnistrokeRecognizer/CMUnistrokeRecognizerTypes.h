@@ -41,6 +41,12 @@ typedef struct _CMURResult {
     float score;
 } CMURResult;
 
+typedef struct _CMUROptions {
+    bool useProtractor;
+    bool rotationInvarianceDisabled;
+} CMUROptions;
+
+typedef struct _CMUROptions *CMUROptionsRef;
 typedef struct _CMURPath *CMURPathRef;
 typedef struct _CMURResult *CMURResultRef;
 typedef struct _CMURTemplates *CMURTemplatesRef;
@@ -57,7 +63,7 @@ void
 CMURTemplatesDelete(CMURTemplatesRef templates);
 
 void
-CMURTemplatesAdd(CMURTemplatesRef templates, const char *name, CMURPathRef path);
+CMURTemplatesAdd(CMURTemplatesRef templates, const char *name, CMURPathRef path, CMUROptionsRef options);
 
 
 /*
@@ -92,6 +98,17 @@ CMURResultNew(char *name, float score);
 
 void
 CMURResultDelete(CMURResultRef result);
+
+
+/*
+ CMUROptions functions
+ */
+
+CMUROptionsRef
+CMUROptionsNew(void);
+
+void
+CMUROptionsDelete(CMUROptionsRef options);
 
 
 #endif /* CMUnistrokeGestureRecognizer_Types_h */

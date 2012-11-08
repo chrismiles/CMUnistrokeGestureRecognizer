@@ -32,6 +32,6 @@
 #include "CMUnistrokeRecognizerTypes.h"
 
 CMURResultRef
-unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates, bool useProtractor);
+unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates, CMUROptionsRef options);
 
 #endif
