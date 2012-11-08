@@ -69,14 +69,14 @@ CMURTemplatesDelete(CMURTemplatesRef templates)
 }
 
 void
-CMURTemplatesAdd(CMURTemplatesRef templates, const char *name, CMURPathRef path)
+CMURTemplatesAdd(CMURTemplatesRef templates, const char *name, CMURPathRef path, CMUROptionsRef options)
 {
     if (templates->length >= templates->templateListSize) {
 	templates->templateListSize *= 2;
 	templates->templateList = realloc(templates->templateList, templates->templateListSize * sizeof(CMURTemplateRef));
     }
     
-    CMURTemplateRef template = unistrokeRecognizerResampledNormalisedTemplate(name, path);
+    CMURTemplateRef template = unistrokeRecognizerResampledNormalisedTemplate(name, path, options);
     template->vector = unistrokeRecognizerVectorize(template->path);
     
     templates->templateList[templates->length++] = template;
@@ -217,4 +217,22 @@ CMURResultDelete(CMURResultRef result)
     result->score = 0.0f;
     
     free(result);
+}
+
+
+#pragma mark - Options
+
+CMUROptionsRef
+CMUROptionsNew(void)
+{
+    CMUROptionsRef options = calloc(1, sizeof(struct _CMUROptions));
+    return options;
+}
+
+void
+CMUROptionsDelete(CMUROptionsRef options)
+{
+    if (NULL == options) return;
+    
+    free(options);
 }

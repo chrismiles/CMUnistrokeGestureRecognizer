@@ -75,7 +75,7 @@ CMURTemplateDelete(CMURTemplateRef template);
  */
 
 CMURTemplateRef
-unistrokeRecognizerResampledNormalisedTemplate(const char *name, CMURPathRef path);
+unistrokeRecognizerResampledNormalisedTemplate(const char *name, CMURPathRef path, CMUROptionsRef options);
 
 CMURPathRef
 unistrokeRecognizerResample(CMURPathRef path, unsigned int sampleSize);

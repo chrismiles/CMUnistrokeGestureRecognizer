@@ -75,7 +75,7 @@ static const float thetaThreshold = 0.034906585f;   // 2°
 
 
 CMURResultRef
-unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates, bool useProtractor)
+unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates, CMUROptionsRef options)
 {
     float b = MAXFLOAT;
     CMURTemplateRef bestTemplate = NULL;
@@ -85,13 +85,22 @@ unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates
     }
     
     CMURPathRef resampledPath = unistrokeRecognizerResample(path, kDefaultPathSampleSize);
+    CMURPathRef normalisedPath;
+    
+    if (options && options->rotationInvarianceDisabled) {
+	normalisedPath = CMURPathCopy(resampledPath);
+    }
+    else {
+	float radians = unistrokeRecognizerIndicativeAngle(resampledPath);
+	normalisedPath = unistrokeRecognizerRotateBy(resampledPath, -radians);
+    }
 
-    float radians = unistrokeRecognizerIndicativeAngle(resampledPath);
-    CMURPathRef normalisedPath = unistrokeRecognizerRotateBy(resampledPath, -radians);
     unistrokeRecognizerScaleTo(normalisedPath, BoundingBoxSize);
     GLKVector2 origin = GLKVector2Make(0.0f, 0.0f);
     unistrokeRecognizerTranslateTo(normalisedPath, origin);
 
+    bool useProtractor = (options && options->useProtractor);
+    
     CMURPathRef vector = NULL;
     if (useProtractor) vector = unistrokeRecognizerVectorize(normalisedPath);
 
@@ -134,12 +143,19 @@ unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates
 }
 
 CMURTemplateRef
-unistrokeRecognizerResampledNormalisedTemplate(const char *name, CMURPathRef path)
+unistrokeRecognizerResampledNormalisedTemplate(const char *name, CMURPathRef path, CMUROptionsRef options)
 {
     CMURPathRef resampledPath = unistrokeRecognizerResample(path, kDefaultPathSampleSize);
+    CMURPathRef normalisedPath;
     
-    float radians = unistrokeRecognizerIndicativeAngle(resampledPath);
-    CMURPathRef normalisedPath = unistrokeRecognizerRotateBy(resampledPath, -radians);
+    if (options && options->rotationInvarianceDisabled) {
+	normalisedPath = CMURPathCopy(resampledPath);
+    }
+    else {
+	float radians = unistrokeRecognizerIndicativeAngle(resampledPath);
+	normalisedPath = unistrokeRecognizerRotateBy(resampledPath, -radians);
+    }
+    
     unistrokeRecognizerScaleTo(normalisedPath, BoundingBoxSize);
     GLKVector2 origin = GLKVector2Make(0.0f, 0.0f);
     unistrokeRecognizerTranslateTo(normalisedPath, origin);
