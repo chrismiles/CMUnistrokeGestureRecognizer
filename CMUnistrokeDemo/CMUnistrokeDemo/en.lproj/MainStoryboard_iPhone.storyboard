@@ -16,15 +16,6 @@
                             <view contentMode="scaleToFill" id="gCS-i4-XYZ" customClass="CMUDDrawView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Recognized: Template Name (99%)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="EBL-bo-4ec">
-                                        <rect key="frame" x="20" y="398" width="280" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="2" id="8xi-b1-tb5"/>
@@ -34,6 +25,28 @@
                                 <rect key="frame" x="0.0" y="428" width="320" height="76"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </scrollView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Recognized: Template Name (99%)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="EBL-bo-4ec">
+                                <rect key="frame" x="20" y="400" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="vwm-LX-aig" userLabel="Add Template Button">
+                                <rect key="frame" x="274" y="397" width="29" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTemplateAction:" destination="2" eventType="touchUpInside" id="otD-ba-AS2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -45,6 +58,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addTemplateButton" destination="vwm-LX-aig" id="nWu-dB-Nhz"/>
                         <outlet property="drawView" destination="gCS-i4-XYZ" id="EEz-yr-udj"/>
                         <outlet property="recognizedTemplateLabel" destination="EBL-bo-4ec" id="9Yq-Xd-5gg"/>
                         <outlet property="templatesScrollView" destination="qnz-eV-8KV" id="BRK-yX-vMg"/>
@@ -160,6 +174,8 @@
         <class className="CMUDViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDViewController.h"/>
             <relationships>
+                <relationship kind="action" name="addTemplateAction:"/>
+                <relationship kind="outlet" name="addTemplateButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="drawView" candidateClass="CMUDDrawView"/>
                 <relationship kind="outlet" name="recognizedTemplateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="templatesScrollView" candidateClass="UIScrollView"/>

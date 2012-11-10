@@ -72,6 +72,8 @@
 
 @protocol CMUnistrokeGestureRecognizerDelegate <NSObject>
 
+@optional
 - (void)unistrokeGestureRecognizer:(CMUnistrokeGestureRecognizer *)unistrokeGestureRecognizer isEvaluatingStrokePath:(UIBezierPath *)strokePath;
+- (void)unistrokeGestureRecognizerDidFailToRecognize:(CMUnistrokeGestureRecognizer *)unistrokeGestureRecognizer;
 
 @end

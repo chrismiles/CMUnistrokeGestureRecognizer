@@ -104,7 +104,9 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 	[self.strokePath addLineToPoint:location];
 	
 	id<CMUnistrokeGestureRecognizerDelegate> unistrokeDelegate = self.unistrokeDelegate;
-	[unistrokeDelegate unistrokeGestureRecognizer:self isEvaluatingStrokePath:self.strokePath];
+	if ([unistrokeDelegate respondsToSelector:@selector(unistrokeGestureRecognizer:isEvaluatingStrokePath:)]) {
+	    [unistrokeDelegate unistrokeGestureRecognizer:self isEvaluatingStrokePath:self.strokePath];
+	}
     }
 }
 
@@ -166,6 +168,11 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
     }
     else {
 	self.state = UIGestureRecognizerStateFailed;
+	
+	id<CMUnistrokeGestureRecognizerDelegate> unistrokeDelegate = self.unistrokeDelegate;
+	if ([unistrokeDelegate respondsToSelector:@selector(unistrokeGestureRecognizerDidFailToRecognize:)]) {
+	    [unistrokeDelegate unistrokeGestureRecognizerDidFailToRecognize:self];
+	}
     }
 }
 

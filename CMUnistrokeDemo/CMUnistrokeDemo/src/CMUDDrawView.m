@@ -49,7 +49,8 @@
     return self;
 }
 
-#pragma mark - Draw Gesture
+
+#pragma mark - Unistroke Gesture Recognizer
 
 - (void)unistrokeGestureRecognizer:(CMUnistrokeGestureRecognizer *)unistrokeGestureRecognizer
 {
@@ -62,6 +63,9 @@
     [self setNeedsDisplay];
 }
 
+
+#pragma mark - CMUnistrokeGestureRecognizerDelegate
+
 - (void)unistrokeGestureRecognizer:(CMUnistrokeGestureRecognizer *)unistrokeGestureRecognizer isEvaluatingStrokePath:(UIBezierPath *)strokePath
 {
 #pragma unused(unistrokeGestureRecognizer)
@@ -71,6 +75,16 @@
     [self.delegate drawViewDidStartRecognizingStroke:self];
     [self setNeedsDisplay];
 }
+
+- (void)unistrokeGestureRecognizerDidFailToRecognize:(CMUnistrokeGestureRecognizer *)unistrokeGestureRecognizer
+{
+#pragma unused(unistrokeGestureRecognizer)
+
+    [self.delegate drawViewDidFailToRecognizeUnistroke:self];
+}
+
+
+#pragma mark - Unistroke registration
 
 - (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)path
 {

@@ -47,5 +47,6 @@
 
 - (void)drawView:(CMUDDrawView *)drawView didRecognizeUnistrokeWithName:(NSString *)name score:(float)score;
 - (void)drawViewDidStartRecognizingStroke:(CMUDDrawView *)drawView;
+- (void)drawViewDidFailToRecognizeUnistroke:(CMUDDrawView *)drawView;
 
 @end

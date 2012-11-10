@@ -35,6 +35,7 @@
 
 @interface CMUDViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *addTemplateButton;
 @property (weak, nonatomic) IBOutlet CMUDDrawView *drawView;
 @property (weak, nonatomic) IBOutlet UILabel *recognizedTemplateLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *templatesScrollView;
@@ -60,6 +61,7 @@
     [super viewDidLoad];
 
     [self setupStrokeTemplates];
+    self.addTemplateButton.hidden = YES;
 }
 
 - (void)setupStrokeTemplates
@@ -131,6 +133,7 @@
 #pragma unused(drawView)
     [self clearRecognizedTemplateLabel];
     [self highlightTemplateView:nil];
+    self.addTemplateButton.hidden = YES;
 }
 
 - (void)drawView:(CMUDDrawView *)drawView didRecognizeUnistrokeWithName:(NSString *)name score:(float)score
@@ -145,6 +148,15 @@
     }
     
     [self updateRecognizedTemplateLabelWithName:name score:score];
+    self.addTemplateButton.hidden = YES; // TODO: NO;
+}
+
+- (void)drawViewDidFailToRecognizeUnistroke:(CMUDDrawView *)drawView
+{
+#pragma unused(drawView)
+
+    self.recognizedTemplateLabel.text = @"Not recognized";
+    self.addTemplateButton.hidden = YES; // TODO: NO;
 }
 
 
@@ -178,6 +190,17 @@
 - (void)clearRecognizedTemplateLabel
 {
     [self updateRecognizedTemplateLabelWithName:nil score:0.0f];
+}
+
+
+#pragma mark - Add template
+
+- (IBAction)addTemplateAction:(id)sender
+{
+#pragma unused(sender)
+    
+    // TODO
+    [[[UIAlertView alloc] initWithTitle:@"TODO" message:nil delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
 }
 
 
