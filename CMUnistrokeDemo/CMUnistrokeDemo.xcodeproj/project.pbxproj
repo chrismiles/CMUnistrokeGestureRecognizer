@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8325FAFF1630B125008D36CF /* CMUDStrokeTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325FAFE1630B125008D36CF /* CMUDStrokeTemplateView.m */; };
+		831C0DB9164E0D5000E317FE /* CMUDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */; };
+		831C0DBA164E0D5000E317FE /* CMUDDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DAB164E0D5000E317FE /* CMUDDrawView.m */; };
+		831C0DBB164E0D5000E317FE /* CMUDOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DAD164E0D5000E317FE /* CMUDOptionsCell.m */; };
+		831C0DBC164E0D5000E317FE /* CMUDOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DAF164E0D5000E317FE /* CMUDOptionsViewController.m */; };
+		831C0DBD164E0D5000E317FE /* CMUDShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DB1164E0D5000E317FE /* CMUDShared.m */; };
+		831C0DBE164E0D5000E317FE /* CMUDStrokeTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DB3164E0D5000E317FE /* CMUDStrokeTemplateView.m */; };
+		831C0DBF164E0D5000E317FE /* CMUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DB6164E0D5000E317FE /* CMUDViewController.m */; };
+		831C0DC0164E0D5000E317FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DB8164E0D5000E317FE /* main.m */; };
 		837E28AB160EE14300017FFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AA160EE14300017FFB /* UIKit.framework */; };
 		837E28AD160EE14300017FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AC160EE14300017FFB /* Foundation.framework */; };
 		837E28AF160EE14300017FFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AE160EE14300017FFB /* CoreGraphics.framework */; };
 		837E28B5160EE14300017FFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 837E28B3160EE14300017FFB /* InfoPlist.strings */; };
-		837E28B7160EE14300017FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 837E28B6160EE14300017FFB /* main.m */; };
-		837E28BB160EE14300017FFB /* CMUDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 837E28BA160EE14300017FFB /* CMUDAppDelegate.m */; };
 		837E28BD160EE14300017FFB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 837E28BC160EE14300017FFB /* Default.png */; };
 		837E28BF160EE14300017FFB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 837E28BE160EE14300017FFB /* Default@2x.png */; };
 		837E28C1160EE14300017FFB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 837E28C0160EE14300017FFB /* Default-568h@2x.png */; };
 		837E28C4160EE14300017FFB /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837E28C2160EE14300017FFB /* MainStoryboard_iPhone.storyboard */; };
 		837E28C7160EE14300017FFB /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837E28C5160EE14300017FFB /* MainStoryboard_iPad.storyboard */; };
-		837E28CA160EE14300017FFB /* CMUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837E28C9160EE14300017FFB /* CMUDViewController.m */; };
-		83901A83164DE241002B67EA /* CMUDOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83901A82164DE241002B67EA /* CMUDOptionsViewController.m */; };
-		83CBA8BA1620127F00183E63 /* CMUDDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CBA8B91620127F00183E63 /* CMUDDrawView.m */; };
 		83CBA8D116214E7700183E63 /* libCMUnistrokeGestureRecognizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CBA8CB16214E5000183E63 /* libCMUnistrokeGestureRecognizer.a */; };
-		83D22E50164DE5C700A959E0 /* CMUDOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D22E4F164DE5C700A959E0 /* CMUDOptionsCell.m */; };
-		83D22E5F164DECD100A959E0 /* CMUDShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D22E5E164DECD100A959E0 /* CMUDShared.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +52,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8325FAF2162FF9FC008D36CF /* CMUDTemplatePaths.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMUDTemplatePaths.h; sourceTree = "<group>"; };
-		8325FAFD1630B125008D36CF /* CMUDStrokeTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDStrokeTemplateView.h; sourceTree = "<group>"; };
-		8325FAFE1630B125008D36CF /* CMUDStrokeTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDStrokeTemplateView.m; sourceTree = "<group>"; };
+		831C0DA8164E0D5000E317FE /* CMUDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDAppDelegate.h; sourceTree = "<group>"; };
+		831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDAppDelegate.m; sourceTree = "<group>"; };
+		831C0DAA164E0D5000E317FE /* CMUDDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDDrawView.h; sourceTree = "<group>"; };
+		831C0DAB164E0D5000E317FE /* CMUDDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDDrawView.m; sourceTree = "<group>"; };
+		831C0DAC164E0D5000E317FE /* CMUDOptionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDOptionsCell.h; sourceTree = "<group>"; };
+		831C0DAD164E0D5000E317FE /* CMUDOptionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDOptionsCell.m; sourceTree = "<group>"; };
+		831C0DAE164E0D5000E317FE /* CMUDOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDOptionsViewController.h; sourceTree = "<group>"; };
+		831C0DAF164E0D5000E317FE /* CMUDOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDOptionsViewController.m; sourceTree = "<group>"; };
+		831C0DB0164E0D5000E317FE /* CMUDShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDShared.h; sourceTree = "<group>"; };
+		831C0DB1164E0D5000E317FE /* CMUDShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDShared.m; sourceTree = "<group>"; };
+		831C0DB2164E0D5000E317FE /* CMUDStrokeTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDStrokeTemplateView.h; sourceTree = "<group>"; };
+		831C0DB3164E0D5000E317FE /* CMUDStrokeTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDStrokeTemplateView.m; sourceTree = "<group>"; };
+		831C0DB4164E0D5000E317FE /* CMUDTemplatePaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDTemplatePaths.h; sourceTree = "<group>"; };
+		831C0DB5164E0D5000E317FE /* CMUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDViewController.h; sourceTree = "<group>"; };
+		831C0DB6164E0D5000E317FE /* CMUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDViewController.m; sourceTree = "<group>"; };
+		831C0DB7164E0D5000E317FE /* CMUnistrokeDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CMUnistrokeDemo-Prefix.pch"; path = "src/CMUnistrokeDemo-Prefix.pch"; sourceTree = "<group>"; };
+		831C0DB8164E0D5000E317FE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/main.m; sourceTree = "<group>"; };
 		83787194163B6C69002A9A6F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		837E28A6160EE14300017FFB /* CMUnistrokeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMUnistrokeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		837E28AA160EE14300017FFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -62,27 +76,13 @@
 		837E28AE160EE14300017FFB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		837E28B2160EE14300017FFB /* CMUnistrokeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CMUnistrokeDemo-Info.plist"; sourceTree = "<group>"; };
 		837E28B4160EE14300017FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		837E28B6160EE14300017FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		837E28B8160EE14300017FFB /* CMUnistrokeDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMUnistrokeDemo-Prefix.pch"; sourceTree = "<group>"; };
-		837E28B9160EE14300017FFB /* CMUDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMUDAppDelegate.h; sourceTree = "<group>"; };
-		837E28BA160EE14300017FFB /* CMUDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMUDAppDelegate.m; sourceTree = "<group>"; };
 		837E28BC160EE14300017FFB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		837E28BE160EE14300017FFB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		837E28C0160EE14300017FFB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		837E28C3160EE14300017FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		837E28C6160EE14300017FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		837E28C8160EE14300017FFB /* CMUDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMUDViewController.h; sourceTree = "<group>"; };
-		837E28C9160EE14300017FFB /* CMUDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMUDViewController.m; sourceTree = "<group>"; };
 		837E28DA160EE27F00017FFB /* libCMUnistrokeGestureRecognizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCMUnistrokeGestureRecognizer.a; path = "../CMUnistrokeGestureRecognizer/build/Release-iphoneos/libCMUnistrokeGestureRecognizer.a"; sourceTree = "<group>"; };
-		83901A81164DE241002B67EA /* CMUDOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDOptionsViewController.h; sourceTree = "<group>"; };
-		83901A82164DE241002B67EA /* CMUDOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDOptionsViewController.m; sourceTree = "<group>"; };
-		83CBA8B81620127F00183E63 /* CMUDDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDDrawView.h; sourceTree = "<group>"; };
-		83CBA8B91620127F00183E63 /* CMUDDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDDrawView.m; sourceTree = "<group>"; };
 		83CBA8C516214E5000183E63 /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = ../CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj; sourceTree = "<group>"; };
-		83D22E4E164DE5C700A959E0 /* CMUDOptionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDOptionsCell.h; sourceTree = "<group>"; };
-		83D22E4F164DE5C700A959E0 /* CMUDOptionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDOptionsCell.m; sourceTree = "<group>"; };
-		83D22E5D164DECD100A959E0 /* CMUDShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDShared.h; sourceTree = "<group>"; };
-		83D22E5E164DECD100A959E0 /* CMUDShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDShared.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831C0DA6164E0D2600E317FE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				837E28C2160EE14300017FFB /* MainStoryboard_iPhone.storyboard */,
+				837E28C5160EE14300017FFB /* MainStoryboard_iPad.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		831C0DA7164E0D5000E317FE /* src */ = {
+			isa = PBXGroup;
+			children = (
+				831C0DA8164E0D5000E317FE /* CMUDAppDelegate.h */,
+				831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */,
+				831C0DAA164E0D5000E317FE /* CMUDDrawView.h */,
+				831C0DAB164E0D5000E317FE /* CMUDDrawView.m */,
+				831C0DAC164E0D5000E317FE /* CMUDOptionsCell.h */,
+				831C0DAD164E0D5000E317FE /* CMUDOptionsCell.m */,
+				831C0DAE164E0D5000E317FE /* CMUDOptionsViewController.h */,
+				831C0DAF164E0D5000E317FE /* CMUDOptionsViewController.m */,
+				831C0DB0164E0D5000E317FE /* CMUDShared.h */,
+				831C0DB1164E0D5000E317FE /* CMUDShared.m */,
+				831C0DB2164E0D5000E317FE /* CMUDStrokeTemplateView.h */,
+				831C0DB3164E0D5000E317FE /* CMUDStrokeTemplateView.m */,
+				831C0DB4164E0D5000E317FE /* CMUDTemplatePaths.h */,
+				831C0DB5164E0D5000E317FE /* CMUDViewController.h */,
+				831C0DB6164E0D5000E317FE /* CMUDViewController.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		837E289B160EE14300017FFB = {
 			isa = PBXGroup;
 			children = (
@@ -133,23 +164,8 @@
 		837E28B0160EE14300017FFB /* CMUnistrokeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				837E28B9160EE14300017FFB /* CMUDAppDelegate.h */,
-				837E28BA160EE14300017FFB /* CMUDAppDelegate.m */,
-				837E28C2160EE14300017FFB /* MainStoryboard_iPhone.storyboard */,
-				837E28C5160EE14300017FFB /* MainStoryboard_iPad.storyboard */,
-				8325FAF2162FF9FC008D36CF /* CMUDTemplatePaths.h */,
-				83D22E5D164DECD100A959E0 /* CMUDShared.h */,
-				83D22E5E164DECD100A959E0 /* CMUDShared.m */,
-				837E28C8160EE14300017FFB /* CMUDViewController.h */,
-				837E28C9160EE14300017FFB /* CMUDViewController.m */,
-				83CBA8B81620127F00183E63 /* CMUDDrawView.h */,
-				83CBA8B91620127F00183E63 /* CMUDDrawView.m */,
-				8325FAFD1630B125008D36CF /* CMUDStrokeTemplateView.h */,
-				8325FAFE1630B125008D36CF /* CMUDStrokeTemplateView.m */,
-				83901A81164DE241002B67EA /* CMUDOptionsViewController.h */,
-				83901A82164DE241002B67EA /* CMUDOptionsViewController.m */,
-				83D22E4E164DE5C700A959E0 /* CMUDOptionsCell.h */,
-				83D22E4F164DE5C700A959E0 /* CMUDOptionsCell.m */,
+				831C0DA7164E0D5000E317FE /* src */,
+				831C0DA6164E0D2600E317FE /* Storyboards */,
 				837E28B1160EE14300017FFB /* Supporting Files */,
 			);
 			path = CMUnistrokeDemo;
@@ -159,12 +175,12 @@
 			isa = PBXGroup;
 			children = (
 				837E28B2160EE14300017FFB /* CMUnistrokeDemo-Info.plist */,
-				837E28B3160EE14300017FFB /* InfoPlist.strings */,
-				837E28B6160EE14300017FFB /* main.m */,
-				837E28B8160EE14300017FFB /* CMUnistrokeDemo-Prefix.pch */,
+				831C0DB7164E0D5000E317FE /* CMUnistrokeDemo-Prefix.pch */,
+				837E28C0160EE14300017FFB /* Default-568h@2x.png */,
 				837E28BC160EE14300017FFB /* Default.png */,
 				837E28BE160EE14300017FFB /* Default@2x.png */,
-				837E28C0160EE14300017FFB /* Default-568h@2x.png */,
+				837E28B3160EE14300017FFB /* InfoPlist.strings */,
+				831C0DB8164E0D5000E317FE /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -278,14 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				837E28B7160EE14300017FFB /* main.m in Sources */,
-				837E28BB160EE14300017FFB /* CMUDAppDelegate.m in Sources */,
-				837E28CA160EE14300017FFB /* CMUDViewController.m in Sources */,
-				83CBA8BA1620127F00183E63 /* CMUDDrawView.m in Sources */,
-				8325FAFF1630B125008D36CF /* CMUDStrokeTemplateView.m in Sources */,
-				83901A83164DE241002B67EA /* CMUDOptionsViewController.m in Sources */,
-				83D22E50164DE5C700A959E0 /* CMUDOptionsCell.m in Sources */,
-				83D22E5F164DECD100A959E0 /* CMUDShared.m in Sources */,
+				831C0DB9164E0D5000E317FE /* CMUDAppDelegate.m in Sources */,
+				831C0DBA164E0D5000E317FE /* CMUDDrawView.m in Sources */,
+				831C0DBB164E0D5000E317FE /* CMUDOptionsCell.m in Sources */,
+				831C0DBC164E0D5000E317FE /* CMUDOptionsViewController.m in Sources */,
+				831C0DBD164E0D5000E317FE /* CMUDShared.m in Sources */,
+				831C0DBE164E0D5000E317FE /* CMUDStrokeTemplateView.m in Sources */,
+				831C0DBF164E0D5000E317FE /* CMUDViewController.m in Sources */,
+				831C0DC0164E0D5000E317FE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CMUnistrokeDemo/CMUnistrokeDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "CMUnistrokeDemo/src/CMUnistrokeDemo-Prefix.pch";
 				INFOPLIST_FILE = "CMUnistrokeDemo/CMUnistrokeDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -441,7 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CMUnistrokeDemo/CMUnistrokeDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "CMUnistrokeDemo/src/CMUnistrokeDemo-Prefix.pch";
 				INFOPLIST_FILE = "CMUnistrokeDemo/CMUnistrokeDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
