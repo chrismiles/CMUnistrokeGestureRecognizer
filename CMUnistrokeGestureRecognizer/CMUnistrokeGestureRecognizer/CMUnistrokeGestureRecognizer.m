@@ -210,6 +210,14 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
     CMURPathDelete(path);
 }
 
+- (void)clearAllUnistrokes
+{
+    if (_unistrokeTemplates) {
+	CMURTemplatesDelete(_unistrokeTemplates);
+    }
+    _unistrokeTemplates = CMURTemplatesNew();
+}
+
 @end
 
 

@@ -29,6 +29,9 @@
 #import "CMUDViewController.h"
 #import "CMUDTemplatePaths.h"
 #import "CMUDStrokeTemplateView.h"
+#import "CMUDOptionsViewController.h"
+#import "CMUDShared.h"
+
 
 @interface CMUDViewController ()
 
@@ -43,10 +46,24 @@
 
 @implementation CMUDViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(templateGesturesShouldReloadNotification:) name:CMUDTemplateGesturesShouldReloadNotification object:nil];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+    [self setupStrokeTemplates];
+}
+
+- (void)setupStrokeTemplates
+{
     [self addStrokeTemplates];
     [self setupTemplatesScrollView];
     [self clearRecognizedTemplateLabel];
@@ -54,6 +71,8 @@
 
 - (void)addStrokeTemplates
 {
+    [self.drawView clearAllUnistrokes];
+    
     NSMutableDictionary *templateViews = [NSMutableDictionary dictionary];
     
     for (unsigned int i=0; ; i++) {
@@ -76,8 +95,20 @@
     self.templateViews = templateViews;
 }
 
+- (void)templateGesturesShouldReloadNotification:(NSNotification *)notification
+{
+#pragma unused(notification)
+    
+    [self setupStrokeTemplates];
+}
+
 - (void)setupTemplatesScrollView
 {
+    [self.templatesScrollView.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+#pragma unused(idx, stop)
+	[(UIView *)obj removeFromSuperview];
+    }];
+    
     CGSize size = CGSizeMake(CGRectGetHeight(self.templatesScrollView.bounds), CGRectGetHeight(self.templatesScrollView.bounds));
     
     [[self.templateViews allValues] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -147,6 +178,19 @@
 - (void)clearRecognizedTemplateLabel
 {
     [self updateRecognizedTemplateLabelWithName:nil score:0.0f];
+}
+
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+#pragma unused(sender)
+    
+    if ([segue.identifier isEqualToString:@"RecognizerToOptions"]) {
+	CMUDOptionsViewController *viewController = (CMUDOptionsViewController *)segue.destinationViewController;
+	viewController.unistrokeGestureRecognizer = self.drawView.unistrokeGestureRecognizer;
+    }
 }
 
 @end

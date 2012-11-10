@@ -1,8 +1,8 @@
 //
-//  CMUDDrawView.h
+//  CMUDOptionsViewController.h
 //  CMUnistrokeDemo
 //
-//  Created by Chris Miles on 6/10/12.
+//  Created by Chris Miles on 10/11/12.
 //  Copyright (c) 2012 Chris Miles. All rights reserved.
 //
 //  MIT Licensed (http://opensource.org/licenses/mit-license.php):
@@ -29,23 +29,10 @@
 #import <UIKit/UIKit.h>
 
 @class CMUnistrokeGestureRecognizer;
-@protocol CMUDDrawViewDelegate;
 
 
-@interface CMUDDrawView : UIView
+@interface CMUDOptionsViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet id<CMUDDrawViewDelegate> delegate;
-@property (strong, nonatomic, readonly) CMUnistrokeGestureRecognizer *unistrokeGestureRecognizer;
-
-- (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)path;
-- (void)clearAllUnistrokes;
-
-@end
-
-
-@protocol CMUDDrawViewDelegate <NSObject>
-
-- (void)drawView:(CMUDDrawView *)drawView didRecognizeUnistrokeWithName:(NSString *)name score:(float)score;
-- (void)drawViewDidStartRecognizingStroke:(CMUDDrawView *)drawView;
+@property (strong, nonatomic) CMUnistrokeGestureRecognizer *unistrokeGestureRecognizer;
 
 @end

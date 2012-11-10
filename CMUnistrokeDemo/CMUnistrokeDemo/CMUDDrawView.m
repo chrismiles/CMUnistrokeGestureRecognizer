@@ -55,7 +55,7 @@
 {
     // A stroke was recognized
     
-    //NSLog(@"Recognized template: %@ (%f)", unistrokeGestureRecognizer.result.recognizedStrokeName, unistrokeGestureRecognizer.result.recognizedStrokeScore);
+    //DLog(@"Recognized template: %@ (%f)", unistrokeGestureRecognizer.result.recognizedStrokeName, unistrokeGestureRecognizer.result.recognizedStrokeScore);
     
     self.drawPath = unistrokeGestureRecognizer.strokePath;
     [self.delegate drawView:self didRecognizeUnistrokeWithName:unistrokeGestureRecognizer.result.recognizedStrokeName score:unistrokeGestureRecognizer.result.recognizedStrokeScore];
@@ -75,6 +75,11 @@
 - (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)path
 {
     [self.unistrokeGestureRecognizer registerUnistrokeWithName:name bezierPath:path];
+}
+
+- (void)clearAllUnistrokes
+{
+    [self.unistrokeGestureRecognizer clearAllUnistrokes];
 }
 
 
