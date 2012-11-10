@@ -15,6 +15,8 @@
 		831C0DBE164E0D5000E317FE /* CMUDStrokeTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DB3164E0D5000E317FE /* CMUDStrokeTemplateView.m */; };
 		831C0DBF164E0D5000E317FE /* CMUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DB6164E0D5000E317FE /* CMUDViewController.m */; };
 		831C0DC0164E0D5000E317FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DB8164E0D5000E317FE /* main.m */; };
+		831C0DCB164E1FA000E317FE /* CMUDAddTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DCA164E1FA000E317FE /* CMUDAddTemplateViewController.m */; };
+		831C0DCF164E233200E317FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831C0DCE164E233200E317FE /* QuartzCore.framework */; };
 		837E28AB160EE14300017FFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AA160EE14300017FFB /* UIKit.framework */; };
 		837E28AD160EE14300017FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AC160EE14300017FFB /* Foundation.framework */; };
 		837E28AF160EE14300017FFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AE160EE14300017FFB /* CoreGraphics.framework */; };
@@ -69,6 +71,9 @@
 		831C0DB6164E0D5000E317FE /* CMUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDViewController.m; sourceTree = "<group>"; };
 		831C0DB7164E0D5000E317FE /* CMUnistrokeDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CMUnistrokeDemo-Prefix.pch"; path = "src/CMUnistrokeDemo-Prefix.pch"; sourceTree = "<group>"; };
 		831C0DB8164E0D5000E317FE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/main.m; sourceTree = "<group>"; };
+		831C0DC9164E1FA000E317FE /* CMUDAddTemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDAddTemplateViewController.h; sourceTree = "<group>"; };
+		831C0DCA164E1FA000E317FE /* CMUDAddTemplateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDAddTemplateViewController.m; sourceTree = "<group>"; };
+		831C0DCE164E233200E317FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		83787194163B6C69002A9A6F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		837E28A6160EE14300017FFB /* CMUnistrokeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMUnistrokeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		837E28AA160EE14300017FFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -90,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				831C0DCF164E233200E317FE /* QuartzCore.framework in Frameworks */,
 				83CBA8D116214E7700183E63 /* libCMUnistrokeGestureRecognizer.a in Frameworks */,
 				837E28AB160EE14300017FFB /* UIKit.framework in Frameworks */,
 				837E28AD160EE14300017FFB /* Foundation.framework in Frameworks */,
@@ -112,6 +118,8 @@
 		831C0DA7164E0D5000E317FE /* src */ = {
 			isa = PBXGroup;
 			children = (
+				831C0DC9164E1FA000E317FE /* CMUDAddTemplateViewController.h */,
+				831C0DCA164E1FA000E317FE /* CMUDAddTemplateViewController.m */,
 				831C0DA8164E0D5000E317FE /* CMUDAppDelegate.h */,
 				831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */,
 				831C0DAA164E0D5000E317FE /* CMUDDrawView.h */,
@@ -153,10 +161,11 @@
 		837E28A9160EE14300017FFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				837E28DA160EE27F00017FFB /* libCMUnistrokeGestureRecognizer.a */,
-				837E28AA160EE14300017FFB /* UIKit.framework */,
-				837E28AC160EE14300017FFB /* Foundation.framework */,
 				837E28AE160EE14300017FFB /* CoreGraphics.framework */,
+				837E28AC160EE14300017FFB /* Foundation.framework */,
+				837E28DA160EE27F00017FFB /* libCMUnistrokeGestureRecognizer.a */,
+				831C0DCE164E233200E317FE /* QuartzCore.framework */,
+				837E28AA160EE14300017FFB /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -302,6 +311,7 @@
 				831C0DBE164E0D5000E317FE /* CMUDStrokeTemplateView.m in Sources */,
 				831C0DBF164E0D5000E317FE /* CMUDViewController.m in Sources */,
 				831C0DC0164E0D5000E317FE /* main.m in Sources */,
+				831C0DCB164E1FA000E317FE /* CMUDAddTemplateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

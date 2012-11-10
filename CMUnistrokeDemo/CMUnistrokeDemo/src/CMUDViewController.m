@@ -30,6 +30,7 @@
 #import "CMUDTemplatePaths.h"
 #import "CMUDStrokeTemplateView.h"
 #import "CMUDOptionsViewController.h"
+#import "CMUDAddTemplateViewController.h"
 #import "CMUDShared.h"
 
 
@@ -148,7 +149,7 @@
     }
     
     [self updateRecognizedTemplateLabelWithName:name score:score];
-    self.addTemplateButton.hidden = YES; // TODO: NO;
+    self.addTemplateButton.hidden = NO;
 }
 
 - (void)drawViewDidFailToRecognizeUnistroke:(CMUDDrawView *)drawView
@@ -156,7 +157,7 @@
 #pragma unused(drawView)
 
     self.recognizedTemplateLabel.text = @"Not recognized";
-    self.addTemplateButton.hidden = YES; // TODO: NO;
+    self.addTemplateButton.hidden = NO;
 }
 
 
@@ -193,17 +194,6 @@
 }
 
 
-#pragma mark - Add template
-
-- (IBAction)addTemplateAction:(id)sender
-{
-#pragma unused(sender)
-    
-    // TODO
-    [[[UIAlertView alloc] initWithTitle:@"TODO" message:nil delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
-}
-
-
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -213,6 +203,10 @@
     if ([segue.identifier isEqualToString:@"RecognizerToOptions"]) {
 	CMUDOptionsViewController *viewController = (CMUDOptionsViewController *)segue.destinationViewController;
 	viewController.unistrokeGestureRecognizer = self.drawView.unistrokeGestureRecognizer;
+    }
+    else if ([segue.identifier isEqualToString:@"RecognizerToAddTemplate"]) {
+	CMUDAddTemplateViewController *viewController = (CMUDAddTemplateViewController *)[(UINavigationController *)segue.destinationViewController topViewController];
+	viewController.strokePath = self.drawView.drawPath;
     }
 }
 
