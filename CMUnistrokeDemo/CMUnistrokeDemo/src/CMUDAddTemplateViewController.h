@@ -28,9 +28,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CMUDAddTemplateViewControllerDelegate;
+
+
 @interface CMUDAddTemplateViewController : UIViewController
+
+@property (weak, nonatomic) id<CMUDAddTemplateViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) UIBezierPath *strokePath;
 @property (strong, nonatomic) NSArray *templateNames;
+
+@end
+
+
+@protocol CMUDAddTemplateViewControllerDelegate <NSObject>
+
+- (void)addTemplateViewController:(CMUDAddTemplateViewController *)addTemplateViewController savesTemplateWithName:(NSString *)templateName path:(UIBezierPath *)templatePath;
 
 @end

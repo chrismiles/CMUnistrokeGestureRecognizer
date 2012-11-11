@@ -71,6 +71,16 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (IBAction)saveAction:(id)sender
+{
+#pragma unused(sender)
+    
+    NSString *templateName = [self.templateNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if ([templateName length] > 0) {
+	[self.delegate addTemplateViewController:self savesTemplateWithName:templateName path:self.strokePath];
+    }
+}
+
 
 #pragma mark - UITextFieldDelegate
 

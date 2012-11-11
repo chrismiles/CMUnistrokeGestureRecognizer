@@ -34,7 +34,7 @@
 #import "CMUDShared.h"
 
 
-@interface CMUDViewController ()
+@interface CMUDViewController () <CMUDAddTemplateViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *addTemplateButton;
 @property (weak, nonatomic) IBOutlet CMUDDrawView *drawView;
@@ -206,9 +206,30 @@
     }
     else if ([segue.identifier isEqualToString:@"RecognizerToAddTemplate"]) {
 	CMUDAddTemplateViewController *viewController = (CMUDAddTemplateViewController *)[(UINavigationController *)segue.destinationViewController topViewController];
+	viewController.delegate = self;
 	viewController.strokePath = self.drawView.drawPath;
 	viewController.templateNames = [self.templateViews allKeys];
     }
+}
+
+
+#pragma mark - CMUDAddTemplateViewControllerDelegate
+
+- (void)addTemplateViewController:(CMUDAddTemplateViewController *)addTemplateViewController savesTemplateWithName:(NSString *)templateName path:(UIBezierPath *)templatePath
+{
+#pragma unused(addTemplateViewController)
+    
+    [self.drawView registerUnistrokeWithName:templateName bezierPath:templatePath];
+    
+    if ([self.templateViews valueForKey:templateName] == nil) {
+	CMUDStrokeTemplateView *templateView = [[CMUDStrokeTemplateView alloc] initWithName:templateName bezierPath:templatePath];
+	NSMutableDictionary *templateViews = [self.templateViews mutableCopy];
+	[templateViews setObject:templateView forKey:templateName];
+	self.templateViews = templateViews;
+	[self setupTemplatesScrollView];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

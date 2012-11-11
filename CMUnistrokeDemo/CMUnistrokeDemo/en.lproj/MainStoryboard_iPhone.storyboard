@@ -185,7 +185,11 @@
                                 <action selector="cancelAction:" destination="dMW-Gs-x52" id="s3g-Lo-5j5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2fq-IT-qwG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2fq-IT-qwG">
+                            <connections>
+                                <action selector="saveAction:" destination="dMW-Gs-x52" id="kO1-ly-2lW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="pathView" destination="jxw-2O-jgk" id="IEA-E3-f6F"/>
@@ -205,12 +209,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TemplateNameCell" id="XrA-7o-GSu">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TemplateNameCell" textLabel="LDO-HP-ycm" style="IBUITableViewCellStyleDefault" id="XrA-7o-GSu">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LDO-HP-ycm">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
@@ -268,6 +281,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDAddTemplateViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelAction:"/>
+                <relationship kind="action" name="saveAction:"/>
                 <relationship kind="outlet" name="pathView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="templateNameTextField" candidateClass="UITextField"/>
             </relationships>
