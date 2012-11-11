@@ -31,6 +31,7 @@
 #import "CMUDStrokeTemplateView.h"
 #import "CMUDOptionsViewController.h"
 #import "CMUDAddTemplateViewController.h"
+#import "CMUDTemplate.h"
 #import "CMUDShared.h"
 
 
@@ -41,7 +42,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *recognizedTemplateLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *templatesScrollView;
 
-@property (strong, nonatomic) NSDictionary *templateViews;
+@property (strong, nonatomic) NSMutableDictionary *templates;
 
 @end
 
@@ -52,9 +53,38 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+	[self initializeDefaultTemplates];
+	
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(templateGesturesShouldReloadNotification:) name:CMUDTemplateGesturesShouldReloadNotification object:nil];
     }
     return self;
+}
+
+- (void)initializeDefaultTemplates
+{
+    NSMutableDictionary *templates = [NSMutableDictionary dictionary];
+    
+    for (unsigned int i=0; ; i++) {
+	struct templatePath templatePath = templatePaths[i];
+	if (templatePath.length == 0) break;
+	
+	UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
+	[bezierPath moveToPoint:templatePath.points[0]];
+	for (NSUInteger j=1; j<templatePath.length; j++) {
+	    [bezierPath addLineToPoint:templatePath.points[j]];
+	}
+	
+	NSString *name = [NSString stringWithUTF8String:templatePath.name];
+	
+	CMUDTemplate *template = [templates valueForKey:name];
+	if (template == nil) {
+	    template = [[CMUDTemplate alloc] initWithName:name];
+	    [templates setValue:template forKey:name];
+	}
+	[template addPath:bezierPath];
+    }
+    
+    self.templates = templates;
 }
 
 - (void)viewDidLoad
@@ -76,26 +106,11 @@
 {
     [self.drawView clearAllUnistrokes];
     
-    NSMutableDictionary *templateViews = [NSMutableDictionary dictionary];
-    
-    for (unsigned int i=0; ; i++) {
-	struct templatePath templatePath = templatePaths[i];
-	if (templatePath.length == 0) break;
-	
-	UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
-	[bezierPath moveToPoint:templatePath.points[0]];
-	for (NSUInteger j=1; j<templatePath.length; j++) {
-	    [bezierPath addLineToPoint:templatePath.points[j]];
+    for (CMUDTemplate *template in [self.templates allValues]) {
+	for (UIBezierPath *path in template.paths) {
+	    [self.drawView registerUnistrokeWithName:template.name bezierPath:path];
 	}
-	
-	NSString *name = [NSString stringWithUTF8String:templatePath.name];
-	[self.drawView registerUnistrokeWithName:name bezierPath:bezierPath];
-	
-	CMUDStrokeTemplateView *templateView = [[CMUDStrokeTemplateView alloc] initWithName:name bezierPath:bezierPath];
-	[templateViews setObject:templateView forKey:name];
     }
-    
-    self.templateViews = templateViews;
 }
 
 - (void)templateGesturesShouldReloadNotification:(NSNotification *)notification
@@ -114,16 +129,17 @@
     
     CGSize size = CGSizeMake(CGRectGetHeight(self.templatesScrollView.bounds), CGRectGetHeight(self.templatesScrollView.bounds));
     
-    [[self.templateViews allValues] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [[self.templates allValues] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 #pragma unused(stop)
-	CMUDStrokeTemplateView *templateView = obj;
+	CMUDTemplate *template = obj;
+	CMUDStrokeTemplateView *templateView = [template strokeTemplateView];
 	
 	CGRect frame = CGRectMake(idx * size.width, 0.0f, size.width, size.height);
 	templateView.frame = CGRectIntegral(CGRectInset(frame, 5.0f, 5.0f));
 	[self.templatesScrollView addSubview:templateView];
     }];
     
-    self.templatesScrollView.contentSize = CGSizeMake(size.width * [self.templateViews count], size.height);
+    self.templatesScrollView.contentSize = CGSizeMake(size.width * [self.templates count], size.height);
 }
 
 
@@ -142,7 +158,8 @@
 #pragma unused(drawView)
 #pragma unused(score)
     
-    CMUDStrokeTemplateView *templateView = [self.templateViews objectForKey:name];
+    CMUDTemplate *template = self.templates[name];
+    CMUDStrokeTemplateView *templateView = template.strokeTemplateView;
     if (templateView) {
 	[self.templatesScrollView scrollRectToVisible:templateView.frame animated:YES];
 	[self highlightTemplateView:templateView];
@@ -165,7 +182,8 @@
 
 - (void)highlightTemplateView:(CMUDStrokeTemplateView *)highlightedTemplateView
 {
-    for (CMUDStrokeTemplateView *templateView in [self.templateViews allValues]) {
+    for (CMUDTemplate *template in [self.templates allValues]) {
+	CMUDStrokeTemplateView *templateView = template.strokeTemplateView;
 	if (templateView == highlightedTemplateView) {
 	    templateView.highlighted = YES;
 	}
@@ -208,7 +226,7 @@
 	CMUDAddTemplateViewController *viewController = (CMUDAddTemplateViewController *)[(UINavigationController *)segue.destinationViewController topViewController];
 	viewController.delegate = self;
 	viewController.strokePath = self.drawView.drawPath;
-	viewController.templateNames = [self.templateViews allKeys];
+	viewController.templateNames = [self.templates allKeys];
     }
 }
 
@@ -221,13 +239,13 @@
     
     [self.drawView registerUnistrokeWithName:templateName bezierPath:templatePath];
     
-    if ([self.templateViews valueForKey:templateName] == nil) {
-	CMUDStrokeTemplateView *templateView = [[CMUDStrokeTemplateView alloc] initWithName:templateName bezierPath:templatePath];
-	NSMutableDictionary *templateViews = [self.templateViews mutableCopy];
-	[templateViews setObject:templateView forKey:templateName];
-	self.templateViews = templateViews;
-	[self setupTemplatesScrollView];
+    CMUDTemplate *template = self.templates[templateName];
+    if (template == nil) {
+	template = [[CMUDTemplate alloc] initWithName:templateName];
+	[self.templates setValue:template forKey:templateName];
     }
+    [template addPath:templatePath];
+    [self setupTemplatesScrollView];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
