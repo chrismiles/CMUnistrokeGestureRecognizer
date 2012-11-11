@@ -29,6 +29,7 @@
 #import "CMUDOptionsViewController.h"
 #import "CMUDOptionsCell.h"
 #import "CMUDShared.h"
+#import "CMUDExportTemplatesViewController.h"
 
 #import <CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.h>
 
@@ -43,9 +44,11 @@
 {
 #pragma unused(tableView, indexPath)
     
-    NSString *optionName = [(CMUDOptionsCell *)cell optionName];
-    BOOL optionValue = [[self.unistrokeGestureRecognizer valueForKey:optionName] boolValue];
-    [(CMUDOptionsCell *)cell configureWithOptionValue:optionValue];
+    if ([cell isKindOfClass:[CMUDOptionsCell class]]) {
+	NSString *optionName = [(CMUDOptionsCell *)cell optionName];
+	BOOL optionValue = [[self.unistrokeGestureRecognizer valueForKey:optionName] boolValue];
+	[(CMUDOptionsCell *)cell configureWithOptionValue:optionValue];
+    }
 }
 
 
@@ -56,15 +59,30 @@
     ZAssert(self.unistrokeGestureRecognizer != nil, @"unistrokeGestureRecognizer must not be nil");
     
     CMUDOptionsCell *cell = (CMUDOptionsCell *)[tableView cellForRowAtIndexPath:indexPath];
-    NSString *optionName = cell.optionName;
-    BOOL optionValue = (! [[self.unistrokeGestureRecognizer valueForKey:optionName] boolValue]);
-    [self.unistrokeGestureRecognizer setValue:@(optionValue) forKey:optionName];
-    
-    [cell configureWithOptionValue:optionValue];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (cell.reloadTemplateGesturesOnOptionChange) {
-	[[NSNotificationCenter defaultCenter] postNotificationName:CMUDTemplateGesturesShouldReloadNotification object:self userInfo:nil];
+    if ([cell isKindOfClass:[CMUDOptionsCell class]]) {
+	NSString *optionName = cell.optionName;
+	BOOL optionValue = (! [[self.unistrokeGestureRecognizer valueForKey:optionName] boolValue]);
+	[self.unistrokeGestureRecognizer setValue:@(optionValue) forKey:optionName];
+	
+	[cell configureWithOptionValue:optionValue];
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	if (cell.reloadTemplateGesturesOnOptionChange) {
+	    [[NSNotificationCenter defaultCenter] postNotificationName:CMUDTemplateGesturesShouldReloadNotification object:self userInfo:nil];
+	}
+    }
+}
+
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+#pragma unused(sender)
+
+    if ([segue.identifier isEqualToString:@"OptionsToExport"]) {
+	CMUDExportTemplatesViewController *viewController = (CMUDExportTemplatesViewController *)segue.destinationViewController;
+	viewController.templates = self.templates;
     }
 }
 

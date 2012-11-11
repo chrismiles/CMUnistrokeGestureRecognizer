@@ -128,6 +128,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection footerTitle="Unistroke template paths can be exported for use in your own applications." id="uF7-tX-oqu">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Hc2-eM-tFv" style="IBUITableViewCellStyleDefault" id="cYf-AZ-yNZ">
+                                        <rect key="frame" x="0.0" y="242" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Export template paths" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hc2-eM-tFv">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="vdC-9O-ZT0" kind="push" identifier="OptionsToExport" id="u2T-7c-c4O"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="hpy-uA-B1C" id="Und-rk-SjY"/>
@@ -138,6 +163,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uuG-Ev-vcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="630" y="-547"/>
+        </scene>
+        <!--Export Templates View Controller - Export-->
+        <scene sceneID="Q6r-8o-2hV">
+            <objects>
+                <tableViewController id="vdC-9O-ZT0" customClass="CMUDExportTemplatesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="123" sectionHeaderHeight="10" sectionFooterHeight="10" id="xEK-s5-r1z">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="123" id="bJE-9A-wSi">
+                                <rect key="frame" x="0.0" y="46" width="320" height="125"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="122"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view tag="543" contentMode="scaleToFill" id="pDy-6x-4te" customClass="CMUDStrokeTemplateView">
+                                            <rect key="frame" x="20" y="7" width="260" height="107"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vdC-9O-ZT0" id="FBy-3M-UfU"/>
+                            <outlet property="delegate" destination="vdC-9O-ZT0" id="loD-xf-cdU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Export" id="28w-u7-575"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ya-AW-9AG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135" y="-547"/>
         </scene>
         <!--Add Template View Controller - Add Template-->
         <scene sceneID="aUG-ei-hrb">
@@ -292,11 +354,17 @@
                 <relationship kind="outlet" name="delegate"/>
             </relationships>
         </class>
+        <class className="CMUDExportTemplatesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDExportTemplatesViewController.h"/>
+        </class>
         <class className="CMUDOptionsCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDOptionsCell.h"/>
         </class>
         <class className="CMUDOptionsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDOptionsViewController.h"/>
+        </class>
+        <class className="CMUDStrokeTemplateView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDStrokeTemplateView.h"/>
         </class>
         <class className="CMUDTemplatesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDTemplatesTableViewController.h"/>

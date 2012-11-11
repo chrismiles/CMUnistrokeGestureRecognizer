@@ -19,6 +19,7 @@
 		831C0DCF164E233200E317FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831C0DCE164E233200E317FE /* QuartzCore.framework */; };
 		831C0DD2164F2F0000E317FE /* CMUDTemplatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DD1164F2F0000E317FE /* CMUDTemplatesTableViewController.m */; };
 		831C0DD5164F9EC800E317FE /* CMUDTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DD4164F9EC800E317FE /* CMUDTemplate.m */; };
+		831C0DD816504D1100E317FE /* CMUDExportTemplatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DD716504D1100E317FE /* CMUDExportTemplatesViewController.m */; };
 		837E28AB160EE14300017FFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AA160EE14300017FFB /* UIKit.framework */; };
 		837E28AD160EE14300017FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AC160EE14300017FFB /* Foundation.framework */; };
 		837E28AF160EE14300017FFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E28AE160EE14300017FFB /* CoreGraphics.framework */; };
@@ -80,6 +81,8 @@
 		831C0DD1164F2F0000E317FE /* CMUDTemplatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDTemplatesTableViewController.m; sourceTree = "<group>"; };
 		831C0DD3164F9EC800E317FE /* CMUDTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDTemplate.h; sourceTree = "<group>"; };
 		831C0DD4164F9EC800E317FE /* CMUDTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDTemplate.m; sourceTree = "<group>"; };
+		831C0DD616504D1100E317FE /* CMUDExportTemplatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDExportTemplatesViewController.h; sourceTree = "<group>"; };
+		831C0DD716504D1100E317FE /* CMUDExportTemplatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDExportTemplatesViewController.m; sourceTree = "<group>"; };
 		83787194163B6C69002A9A6F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		837E28A6160EE14300017FFB /* CMUnistrokeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMUnistrokeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		837E28AA160EE14300017FFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,8 @@
 				831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */,
 				831C0DAA164E0D5000E317FE /* CMUDDrawView.h */,
 				831C0DAB164E0D5000E317FE /* CMUDDrawView.m */,
+				831C0DD616504D1100E317FE /* CMUDExportTemplatesViewController.h */,
+				831C0DD716504D1100E317FE /* CMUDExportTemplatesViewController.m */,
 				831C0DAC164E0D5000E317FE /* CMUDOptionsCell.h */,
 				831C0DAD164E0D5000E317FE /* CMUDOptionsCell.m */,
 				831C0DAE164E0D5000E317FE /* CMUDOptionsViewController.h */,
@@ -324,6 +329,7 @@
 				831C0DCB164E1FA000E317FE /* CMUDAddTemplateViewController.m in Sources */,
 				831C0DD2164F2F0000E317FE /* CMUDTemplatesTableViewController.m in Sources */,
 				831C0DD5164F9EC800E317FE /* CMUDTemplate.m in Sources */,
+				831C0DD816504D1100E317FE /* CMUDExportTemplatesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

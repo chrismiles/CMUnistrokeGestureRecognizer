@@ -220,6 +220,7 @@
     
     if ([segue.identifier isEqualToString:@"RecognizerToOptions"]) {
 	CMUDOptionsViewController *viewController = (CMUDOptionsViewController *)segue.destinationViewController;
+	viewController.templates = self.templates;
 	viewController.unistrokeGestureRecognizer = self.drawView.unistrokeGestureRecognizer;
     }
     else if ([segue.identifier isEqualToString:@"RecognizerToAddTemplate"]) {
