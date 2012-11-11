@@ -1,8 +1,8 @@
 //
-//  CMUDAddTemplateViewController.h
+//  CMUDTemplatesTableViewController.h
 //  CMUnistrokeDemo
 //
-//  Created by Chris Miles on 10/11/12.
+//  Created by Chris Miles on 11/11/12.
 //  Copyright (c) 2012 Chris Miles. All rights reserved.
 //
 //  MIT Licensed (http://opensource.org/licenses/mit-license.php):
@@ -28,9 +28,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMUDAddTemplateViewController : UIViewController
+@protocol CMUDTemplatesTableViewControllerDelegate;
 
-@property (strong, nonatomic) UIBezierPath *strokePath;
+
+@interface CMUDTemplatesTableViewController : UITableViewController
+
+@property (weak, nonatomic) id<CMUDTemplatesTableViewControllerDelegate> delegate;
 @property (strong, nonatomic) NSArray *templateNames;
+
+@end
+
+
+
+@protocol CMUDTemplatesTableViewControllerDelegate <NSObject>
+
+- (void)templatesTableViewController:(CMUDTemplatesTableViewController *)templatesTableViewController didSelectTemplateName:(NSString *)templateName;
 
 @end

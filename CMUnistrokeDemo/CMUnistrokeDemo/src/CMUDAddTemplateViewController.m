@@ -27,13 +27,15 @@
 //
 
 #import "CMUDAddTemplateViewController.h"
+#import "CMUDTemplatesTableViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
 
-@interface CMUDAddTemplateViewController ()
+@interface CMUDAddTemplateViewController () <CMUDTemplatesTableViewControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *pathView;
+@property (weak, nonatomic) IBOutlet UITextField *templateNameTextField;
 
 @end
 
@@ -67,6 +69,40 @@
 {
 #pragma unused(sender)
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+#pragma unused(sender)
+    
+    if ([segue.identifier isEqualToString:@"AddTemplateToTemplates"]) {
+	CMUDTemplatesTableViewController *viewController = (CMUDTemplatesTableViewController *)segue.destinationViewController;
+	viewController.delegate = self;
+	viewController.templateNames = self.templateNames;
+    }
+}
+
+
+#pragma mark - CMUDTemplatesTableViewControllerDelegate
+
+- (void)templatesTableViewController:(CMUDTemplatesTableViewController *)templatesTableViewController didSelectTemplateName:(NSString *)templateName
+{
+#pragma unused(templatesTableViewController)
+
+    self.templateNameTextField.text = templateName;
+    [self.navigationController popToViewController:self animated:YES];
 }
 
 @end

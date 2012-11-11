@@ -207,6 +207,7 @@
     else if ([segue.identifier isEqualToString:@"RecognizerToAddTemplate"]) {
 	CMUDAddTemplateViewController *viewController = (CMUDAddTemplateViewController *)[(UINavigationController *)segue.destinationViewController topViewController];
 	viewController.strokePath = self.drawView.drawPath;
+	viewController.templateNames = [self.templateViews allKeys];
     }
 }
 
