@@ -29,6 +29,7 @@
 #import "CMUDExportTemplatesViewController.h"
 #import "CMUDTemplate.h"
 #import "CMUDStrokeTemplateView.h"
+#import "CMUDTemplateDataViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -86,10 +87,31 @@
 }
 
 
-#pragma mark - Table view delegate
+#pragma mark - Segue
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+#pragma unused(sender)
+
+    if ([segue.identifier isEqualToString:@"ExportTemplatesToData"]) {
+	NSMutableDictionary *paths = [NSMutableDictionary dictionary];
+	for (NSIndexPath *indexPath in [self.tableView indexPathsForSelectedRows]) {
+	    NSString *key = [self.templates allKeys][(NSUInteger)indexPath.section];
+	    CMUDTemplate *template = self.templates[key];
+	    UIBezierPath *path = template.paths[(NSUInteger)indexPath.row];
+	    
+	    NSMutableArray *pathList = paths[template.name];
+	    if (pathList == nil) {
+		pathList = [NSMutableArray array];
+		paths[template.name] = pathList;
+	    }
+	    [pathList addObject:path];
+	}
+	
+	// pass selected templates
+	CMUDTemplateDataViewController *viewController = (CMUDTemplateDataViewController *)segue.destinationViewController;
+	viewController.paths = paths;
+    }
+}
 
 @end

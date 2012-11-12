@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831C042C165110FA00D48EE2 /* CMUDTemplateDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C042B165110FA00D48EE2 /* CMUDTemplateDataViewController.m */; };
 		831C0DB9164E0D5000E317FE /* CMUDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */; };
 		831C0DBA164E0D5000E317FE /* CMUDDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DAB164E0D5000E317FE /* CMUDDrawView.m */; };
 		831C0DBB164E0D5000E317FE /* CMUDOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C0DAD164E0D5000E317FE /* CMUDOptionsCell.m */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		831C042A165110FA00D48EE2 /* CMUDTemplateDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDTemplateDataViewController.h; sourceTree = "<group>"; };
+		831C042B165110FA00D48EE2 /* CMUDTemplateDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDTemplateDataViewController.m; sourceTree = "<group>"; };
 		831C0DA8164E0D5000E317FE /* CMUDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDAppDelegate.h; sourceTree = "<group>"; };
 		831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDAppDelegate.m; sourceTree = "<group>"; };
 		831C0DAA164E0D5000E317FE /* CMUDDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDDrawView.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				831C0DB3164E0D5000E317FE /* CMUDStrokeTemplateView.m */,
 				831C0DD3164F9EC800E317FE /* CMUDTemplate.h */,
 				831C0DD4164F9EC800E317FE /* CMUDTemplate.m */,
+				831C042A165110FA00D48EE2 /* CMUDTemplateDataViewController.h */,
+				831C042B165110FA00D48EE2 /* CMUDTemplateDataViewController.m */,
 				831C0DB4164E0D5000E317FE /* CMUDTemplatePaths.h */,
 				831C0DD0164F2F0000E317FE /* CMUDTemplatesTableViewController.h */,
 				831C0DD1164F2F0000E317FE /* CMUDTemplatesTableViewController.m */,
@@ -330,6 +335,7 @@
 				831C0DD2164F2F0000E317FE /* CMUDTemplatesTableViewController.m in Sources */,
 				831C0DD5164F9EC800E317FE /* CMUDTemplate.m in Sources */,
 				831C0DD816504D1100E317FE /* CMUDExportTemplatesViewController.m in Sources */,
+				831C042C165110FA00D48EE2 /* CMUDTemplateDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
