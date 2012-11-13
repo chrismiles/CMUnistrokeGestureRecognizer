@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="1bm-pd-SAe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="1bm-pd-SAe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -127,6 +127,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection footerTitle="Unistroke template paths can be exported for use in your own applications." id="06a-tk-vsb">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="zP1-bN-IHb" style="IBUITableViewCellStyleDefault" id="L6H-Aq-WQY">
+                                        <rect key="frame" x="0.0" y="224" width="768" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="45" y="1" width="658" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Export template paths" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zP1-bN-IHb">
+                                                    <rect key="frame" x="10" y="0.0" width="638" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="FXb-z1-TDe" kind="push" identifier="OptionsToExport" id="A0E-3V-av1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Jah-o6-Xp2" id="Xgg-nW-L9a"/>
@@ -198,6 +223,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZC-ud-XRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3395" y="1322"/>
+        </scene>
+        <!--Export Templates View Controller - Select Templates-->
+        <scene sceneID="nR8-9W-BiU">
+            <objects>
+                <tableViewController id="FXb-z1-TDe" customClass="CMUDExportTemplatesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsMultipleSelection="YES" rowHeight="126" sectionHeaderHeight="10" sectionFooterHeight="10" id="7b4-wM-ywb">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="126" id="EZb-AM-1Kg">
+                                <rect key="frame" x="0.0" y="54" width="768" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="45" y="1" width="678" height="125"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view tag="543" contentMode="scaleToFill" id="ZFJ-qG-4ed" customClass="CMUDStrokeTemplateView">
+                                            <rect key="frame" x="161" y="7" width="356" height="107"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FXb-z1-TDe" id="glD-1T-QPb"/>
+                            <outlet property="delegate" destination="FXb-z1-TDe" id="t7c-6b-lTM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select Templates" id="AW9-e2-UGh">
+                        <barButtonItem key="rightBarButtonItem" title="Export" id="Y7x-L1-gYX">
+                            <connections>
+                                <segue destination="noM-dt-eEd" kind="push" identifier="ExportTemplatesToData" id="fdC-Nu-S8J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlU-MJ-JJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3649" y="-91"/>
+        </scene>
+        <!--Template Data View Controller - Template Data-->
+        <scene sceneID="Chv-Iw-Zyj">
+            <objects>
+                <viewController id="noM-dt-eEd" customClass="CMUDTemplateDataViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9U8-gB-peE">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Bvx-iJ-aTC">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Template Data" id="CUA-pQ-23q"/>
+                    <connections>
+                        <outlet property="dataTextView" destination="Bvx-iJ-aTC" id="GH1-kE-O2f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0g-9i-1ei" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4656" y="-91"/>
         </scene>
         <!--Templates Table View Controller - Templates-->
         <scene sceneID="gqk-GN-tbD">
@@ -292,11 +388,23 @@
                 <relationship kind="outlet" name="delegate"/>
             </relationships>
         </class>
+        <class className="CMUDExportTemplatesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDExportTemplatesViewController.h"/>
+        </class>
         <class className="CMUDOptionsCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDOptionsCell.h"/>
         </class>
         <class className="CMUDOptionsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDOptionsViewController.h"/>
+        </class>
+        <class className="CMUDStrokeTemplateView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDStrokeTemplateView.h"/>
+        </class>
+        <class className="CMUDTemplateDataViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDTemplateDataViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataTextView" candidateClass="UITextView"/>
+            </relationships>
         </class>
         <class className="CMUDTemplatesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMUDTemplatesTableViewController.h"/>
