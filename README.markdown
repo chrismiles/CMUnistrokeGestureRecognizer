@@ -27,6 +27,8 @@ A demo iOS application is included, showing how CMUnistrokeGestureRecognizer can
 and containing all the test strokes used by the algorithm authors. The demo app is open
 source and released under a MIT license.
 
+![CMUnistrokeGestureRecognizer](https://lh5.googleusercontent.com/-_j1H_Auebcw/UKqqXPOOdWI/AAAAAAAAAVw/eJUC6RWMS9g/s912/CMUnistrokeGestureRecognizer%2520star.png "CMUnistrokeGestureRecognizer")
+
 
 Support
 -------
