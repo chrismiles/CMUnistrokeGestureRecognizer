@@ -87,7 +87,7 @@ unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates
     CMURPathRef resampledPath = unistrokeRecognizerResample(path, kDefaultPathSampleSize);
     CMURPathRef normalisedPath;
     
-    if (options && options->rotationInvarianceDisabled) {
+    if (options && options->rotationNormalisationDisabled) {
 	normalisedPath = CMURPathCopy(resampledPath);
     }
     else {
@@ -148,7 +148,7 @@ unistrokeRecognizerResampledNormalisedTemplate(const char *name, CMURPathRef pat
     CMURPathRef resampledPath = unistrokeRecognizerResample(path, kDefaultPathSampleSize);
     CMURPathRef normalisedPath;
     
-    if (options && options->rotationInvarianceDisabled) {
+    if (options && options->rotationNormalisationDisabled) {
 	normalisedPath = CMURPathCopy(resampledPath);
     }
     else {

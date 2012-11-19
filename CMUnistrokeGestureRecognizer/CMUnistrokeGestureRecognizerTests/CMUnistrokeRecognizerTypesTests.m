@@ -143,4 +143,17 @@
     CMURResultDelete(result);
 }
 
+- (void)testCMUROptionsNew
+{
+    CMUROptionsRef options = CMUROptionsNew();
+    STAssertTrue(options != NULL, @"CMUROptionsNew() returned NULL");
+    
+    if (options) {
+	options->rotationNormalisationDisabled = true;
+	options->useProtractor = true;
+    }
+    
+    CMUROptionsDelete(options);
+}
+
 @end

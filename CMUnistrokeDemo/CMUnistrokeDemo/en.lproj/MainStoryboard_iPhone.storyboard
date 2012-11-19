@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="lAR-X9-H7U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3080" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="lAR-X9-H7U">
     <dependencies>
         <deployment version="1280" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2078"/>
     </dependencies>
     <scenes>
         <!--View Controller - $1 Unistroke Recognizer-->
@@ -102,7 +102,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection footerTitle="Rotation invariance means gesture path rotation is normalised before comparison." id="hUq-XL-j3l">
+                            <tableViewSection footerTitle="Gesture path rotation is normalised before comparison." id="hUq-XL-j3l">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Puh-Vo-14s" style="IBUITableViewCellStyleDefault" id="1Nw-OV-ezF" customClass="CMUDOptionsCell">
                                         <rect key="frame" x="0.0" y="126" width="320" height="46"/>
@@ -111,7 +111,7 @@
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Rotation invariance enabled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Puh-Vo-14s">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Rotation normalisation enabled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Puh-Vo-14s">
                                                     <rect key="frame" x="10" y="0.0" width="260" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -122,7 +122,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="optionName" value="rotationInvarianceEnabled"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="optionName" value="rotationNormalisationEnabled"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="reloadTemplateGesturesOnOptionChange" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>

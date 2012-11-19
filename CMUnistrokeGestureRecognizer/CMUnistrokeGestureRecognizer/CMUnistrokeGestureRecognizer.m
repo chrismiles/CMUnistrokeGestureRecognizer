@@ -51,7 +51,7 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 @implementation CMUnistrokeGestureRecognizer
 
 @dynamic protactorMethodEnabled;
-@dynamic rotationInvarianceEnabled;
+@dynamic rotationNormalisationEnabled;
 
 
 - (id)initWithTarget:(id)target action:(SEL)action
@@ -62,7 +62,7 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 	
 	_options = CMUROptionsNew();
 	_options->useProtractor = false;
-	_options->rotationInvarianceDisabled = false;
+	_options->rotationNormalisationDisabled = false;
     }
     return self;
 }
@@ -148,14 +148,14 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
     return _options->useProtractor;
 }
 
-- (void)setRotationInvarianceEnabled:(BOOL)rotationInvarianceEnabled
+- (void)setRotationNormalisationEnabled:(BOOL)rotationNormalisationEnabled
 {
-    _options->rotationInvarianceDisabled = (! rotationInvarianceEnabled);
+    _options->rotationNormalisationDisabled = (! rotationNormalisationEnabled);
 }
 
-- (BOOL)rotationInvarianceEnabled
+- (BOOL)rotationNormalisationEnabled
 {
-    return (! _options->rotationInvarianceDisabled);
+    return (! _options->rotationNormalisationDisabled);
 }
 
 

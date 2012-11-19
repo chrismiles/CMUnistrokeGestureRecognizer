@@ -57,7 +57,7 @@
     recognition is attempted.
     Defaults to enabled.
  */
-@property (nonatomic, assign) BOOL rotationInvarianceEnabled;	// default: YES
+@property (nonatomic, assign) BOOL rotationNormalisationEnabled;	// default: YES
 
 @property (nonatomic, strong, readonly) CMUnistrokeGestureResult *result;
 @property (nonatomic, strong, readonly) UIBezierPath *strokePath;
