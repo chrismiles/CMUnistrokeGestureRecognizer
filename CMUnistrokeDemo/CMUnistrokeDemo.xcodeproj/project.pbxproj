@@ -130,29 +130,14 @@
 		831C0DA7164E0D5000E317FE /* src */ = {
 			isa = PBXGroup;
 			children = (
-				831C0DC9164E1FA000E317FE /* CMUDAddTemplateViewController.h */,
-				831C0DCA164E1FA000E317FE /* CMUDAddTemplateViewController.m */,
-				831C0DA8164E0D5000E317FE /* CMUDAppDelegate.h */,
-				831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */,
+				83E4C683167142BE00B4CB7A /* App Delegate */,
+				83E4C685167142FC00B4CB7A /* Export */,
+				83E4C684167142CC00B4CB7A /* Options */,
+				83E4C6871671434500B4CB7A /* Shared */,
+				83E4C6861671432800B4CB7A /* Template Addition */,
+				83E4C688167143D000B4CB7A /* Templates */,
 				831C0DAA164E0D5000E317FE /* CMUDDrawView.h */,
 				831C0DAB164E0D5000E317FE /* CMUDDrawView.m */,
-				831C0DD616504D1100E317FE /* CMUDExportTemplatesViewController.h */,
-				831C0DD716504D1100E317FE /* CMUDExportTemplatesViewController.m */,
-				831C0DAC164E0D5000E317FE /* CMUDOptionsCell.h */,
-				831C0DAD164E0D5000E317FE /* CMUDOptionsCell.m */,
-				831C0DAE164E0D5000E317FE /* CMUDOptionsViewController.h */,
-				831C0DAF164E0D5000E317FE /* CMUDOptionsViewController.m */,
-				831C0DB0164E0D5000E317FE /* CMUDShared.h */,
-				831C0DB1164E0D5000E317FE /* CMUDShared.m */,
-				831C0DB2164E0D5000E317FE /* CMUDStrokeTemplateView.h */,
-				831C0DB3164E0D5000E317FE /* CMUDStrokeTemplateView.m */,
-				831C0DD3164F9EC800E317FE /* CMUDTemplate.h */,
-				831C0DD4164F9EC800E317FE /* CMUDTemplate.m */,
-				831C042A165110FA00D48EE2 /* CMUDTemplateDataViewController.h */,
-				831C042B165110FA00D48EE2 /* CMUDTemplateDataViewController.m */,
-				831C0DB4164E0D5000E317FE /* CMUDTemplatePaths.h */,
-				831C0DD0164F2F0000E317FE /* CMUDTemplatesTableViewController.h */,
-				831C0DD1164F2F0000E317FE /* CMUDTemplatesTableViewController.m */,
 				831C0DB5164E0D5000E317FE /* CMUDViewController.h */,
 				831C0DB6164E0D5000E317FE /* CMUDViewController.m */,
 			);
@@ -163,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				837E28B0160EE14300017FFB /* CMUnistrokeDemo */,
-				83CBA8CE16214E5B00183E63 /* libs */,
+				83CBA8CE16214E5B00183E63 /* Dependencies */,
 				837E28A9160EE14300017FFB /* Frameworks */,
 				837E28A7160EE14300017FFB /* Products */,
 				83787194163B6C69002A9A6F /* LICENSE.txt */,
@@ -223,12 +208,75 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		83CBA8CE16214E5B00183E63 /* libs */ = {
+		83CBA8CE16214E5B00183E63 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				83CBA8C516214E5000183E63 /* CMUnistrokeGestureRecognizer.xcodeproj */,
 			);
-			name = libs;
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		83E4C683167142BE00B4CB7A /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				831C0DA8164E0D5000E317FE /* CMUDAppDelegate.h */,
+				831C0DA9164E0D5000E317FE /* CMUDAppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		83E4C684167142CC00B4CB7A /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				831C0DAC164E0D5000E317FE /* CMUDOptionsCell.h */,
+				831C0DAD164E0D5000E317FE /* CMUDOptionsCell.m */,
+				831C0DAE164E0D5000E317FE /* CMUDOptionsViewController.h */,
+				831C0DAF164E0D5000E317FE /* CMUDOptionsViewController.m */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
+		83E4C685167142FC00B4CB7A /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				831C0DD616504D1100E317FE /* CMUDExportTemplatesViewController.h */,
+				831C0DD716504D1100E317FE /* CMUDExportTemplatesViewController.m */,
+				831C0DB2164E0D5000E317FE /* CMUDStrokeTemplateView.h */,
+				831C0DB3164E0D5000E317FE /* CMUDStrokeTemplateView.m */,
+				831C042A165110FA00D48EE2 /* CMUDTemplateDataViewController.h */,
+				831C042B165110FA00D48EE2 /* CMUDTemplateDataViewController.m */,
+			);
+			name = Export;
+			sourceTree = "<group>";
+		};
+		83E4C6861671432800B4CB7A /* Template Addition */ = {
+			isa = PBXGroup;
+			children = (
+				831C0DC9164E1FA000E317FE /* CMUDAddTemplateViewController.h */,
+				831C0DCA164E1FA000E317FE /* CMUDAddTemplateViewController.m */,
+			);
+			name = "Template Addition";
+			sourceTree = "<group>";
+		};
+		83E4C6871671434500B4CB7A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				831C0DB0164E0D5000E317FE /* CMUDShared.h */,
+				831C0DB1164E0D5000E317FE /* CMUDShared.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		83E4C688167143D000B4CB7A /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				831C0DD3164F9EC800E317FE /* CMUDTemplate.h */,
+				831C0DD4164F9EC800E317FE /* CMUDTemplate.m */,
+				831C0DB4164E0D5000E317FE /* CMUDTemplatePaths.h */,
+				831C0DD0164F2F0000E317FE /* CMUDTemplatesTableViewController.h */,
+				831C0DD1164F2F0000E317FE /* CMUDTemplatesTableViewController.m */,
+			);
+			name = Templates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
