@@ -7,6 +7,8 @@ $1 Unistroke Gesture Recognizer for iOS
 [1]: https://github.com/chrismiles/CMUnistrokeGestureRecognizer "CMUnistrokeGestureRecognizer"
 [2]: http://depts.washington.edu/aimgroup/proj/dollar/ "$1 Unistroke Recognizer"
 
+Read more about it at http://blog.chrismiles.info/2012/12/introducing-cmunistrokegesturerecognizer.html
+
 The $1 Unistroke Recognizer was originally authored by:
   
   * Jacob O. Wobbrock, University of Washington
