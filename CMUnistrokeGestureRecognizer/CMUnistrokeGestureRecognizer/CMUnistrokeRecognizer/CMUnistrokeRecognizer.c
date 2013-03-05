@@ -351,7 +351,8 @@ unistrokeRecognizerPathDistance(CMURPathRef pathA, CMURPathRef pathB)
     assert(pathA->length == pathB->length);
     
     for (unsigned int i=0; i < pathA->length; i++) {
-	d += GLKVector2Distance(pathA->pointList[i], pathB->pointList[i]);
+	float distance = GLKVector2Distance(pathA->pointList[i], pathB->pointList[i]);
+	if (! isnan(distance)) d += distance;
     }
     
     return d / (float)pathA->length;
