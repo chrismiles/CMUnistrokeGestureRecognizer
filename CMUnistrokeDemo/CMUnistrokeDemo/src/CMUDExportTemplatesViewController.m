@@ -73,7 +73,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = nil;
+    if ([tableView respondsToSelector:NSSelectorFromString(@"dequeueReusableCellWithIdentifier:forIndexPath:")]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    }
+    else {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    }
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
 
     const NSInteger templateViewTag = 543;
     CMUDStrokeTemplateView *templateView = (CMUDStrokeTemplateView *)[cell.contentView viewWithTag:templateViewTag];
