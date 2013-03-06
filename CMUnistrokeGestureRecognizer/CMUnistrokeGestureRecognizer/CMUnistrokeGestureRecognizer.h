@@ -63,6 +63,7 @@
 @property (nonatomic, strong, readonly) UIBezierPath *strokePath;
 
 - (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)path;
+- (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)bezierPath bidirectional:(BOOL)bidirectional;
 - (void)clearAllUnistrokes;
 
 @end

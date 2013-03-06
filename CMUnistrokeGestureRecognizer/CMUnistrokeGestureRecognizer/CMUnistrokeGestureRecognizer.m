@@ -212,8 +212,19 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
 
 - (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)bezierPath
 {
+    [self registerUnistrokeWithName:name bezierPath:bezierPath bidirectional:NO];
+}
+
+- (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)bezierPath bidirectional:(BOOL)bidirectional
+{
     CMURPathRef path = [self pathFromBezierPath:bezierPath];
     CMURTemplatesAdd(_unistrokeTemplates, [name cStringUsingEncoding:NSUTF8StringEncoding], path, _options);
+    
+    if (bidirectional) {
+	CMURPathReverse(path);
+	CMURTemplatesAdd(_unistrokeTemplates, [name cStringUsingEncoding:NSUTF8StringEncoding], path, _options);
+    }
+    
     CMURPathDelete(path);
 }
 

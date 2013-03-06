@@ -146,6 +146,21 @@ CMURPathAddPoint(CMURPathRef path, float x, float y)
     path->pointList[path->length++] = vector;
 }
 
+void
+CMURPathReverse(CMURPathRef path)
+{
+    for (unsigned int i=0; i<path->length/2; i++) {
+	unsigned int indexA = i;
+	unsigned int indexB = path->length-i-1;
+	
+	GLKVector2 pointA = path->pointList[indexA];
+	GLKVector2 pointB = path->pointList[indexB];
+	
+	path->pointList[indexB] = pointA;
+	path->pointList[indexA] = pointB;
+    }
+}
+
 
 #pragma mark - CMURTemplate
 

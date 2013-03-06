@@ -88,6 +88,9 @@ CMURPathDelete(CMURPathRef path);
 void
 CMURPathAddPoint(CMURPathRef path, float x, float y);
 
+void
+CMURPathReverse(CMURPathRef path);
+
 
 /*
  CMURResult functions
