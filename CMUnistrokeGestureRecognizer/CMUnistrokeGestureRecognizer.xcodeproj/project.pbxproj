@@ -242,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CMUGR;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Chris Miles";
 			};
 			buildConfigurationList = 837E2867160EE03600017FFB /* Build configuration list for PBXProject "CMUnistrokeGestureRecognizer" */;
@@ -381,6 +381,7 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = "-Wselector";
