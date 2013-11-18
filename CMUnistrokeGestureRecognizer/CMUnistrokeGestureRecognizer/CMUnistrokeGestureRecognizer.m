@@ -249,22 +249,22 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element)
     
     switch(type) {
         case kCGPathElementMoveToPoint: // contains 1 point
-	    CMURPathAddPoint(path, points[0].x, points[0].y);
+	    CMURPathAddPoint(path, (float)points[0].x, (float)points[0].y);
             break;
 	    
         case kCGPathElementAddLineToPoint: // contains 1 point
-	    CMURPathAddPoint(path, points[0].x, points[0].y);
+	    CMURPathAddPoint(path, (float)points[0].x, (float)points[0].y);
             break;
 	    
         case kCGPathElementAddQuadCurveToPoint: // contains 2 points
-	    CMURPathAddPoint(path, points[0].x, points[0].y);
-	    CMURPathAddPoint(path, points[1].x, points[1].y);
+	    CMURPathAddPoint(path, (float)points[0].x, (float)points[0].y);
+	    CMURPathAddPoint(path, (float)points[1].x, (float)points[1].y);
             break;
 	    
         case kCGPathElementAddCurveToPoint: // contains 3 points
-	    CMURPathAddPoint(path, points[0].x, points[0].y);
-	    CMURPathAddPoint(path, points[1].x, points[1].y);
-	    CMURPathAddPoint(path, points[2].x, points[2].y);
+	    CMURPathAddPoint(path, (float)points[0].x, (float)points[0].y);
+	    CMURPathAddPoint(path, (float)points[1].x, (float)points[1].y);
+	    CMURPathAddPoint(path, (float)points[2].x, (float)points[2].y);
             break;
 	    
         case kCGPathElementCloseSubpath: // contains no point
