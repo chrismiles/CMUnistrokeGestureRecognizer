@@ -26,8 +26,8 @@
 //  THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface CMUnistrokeRecognizerTests : SenTestCase
+@interface CMUnistrokeRecognizerTests : XCTestCase
 
 @end

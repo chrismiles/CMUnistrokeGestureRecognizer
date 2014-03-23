@@ -48,7 +48,7 @@
 - (void)testExample
 {
     CMUnistrokeGestureRecognizer *unistrokeGestureRecognizer = [[CMUnistrokeGestureRecognizer alloc] init];
-    STAssertNotNil(unistrokeGestureRecognizer, @"CMUnistrokeGestureRecognizer creation failed");
+    XCTAssertNotNil(unistrokeGestureRecognizer, @"CMUnistrokeGestureRecognizer creation failed");
 }
 
 @end

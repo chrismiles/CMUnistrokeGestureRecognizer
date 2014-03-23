@@ -35,7 +35,7 @@
 - (void)testCMURTemplatesNew
 {
     CMURTemplatesRef templates = CMURTemplatesNew();
-    STAssertTrue(templates != NULL, @"CMURTemplatesNew() returned NULL");
+    XCTAssertTrue(templates != NULL, @"CMURTemplatesNew() returned NULL");
     CMURTemplatesDelete(templates);
 }
 
@@ -43,13 +43,13 @@
 {
     CMURTemplatesRef templates = CMURTemplatesNew();
     
-    STAssertEquals(templates->length, (unsigned int)0, @"Incorrect initial templates length");
+    XCTAssertEqual(templates->length, (unsigned int)0, @"Incorrect initial templates length");
     
     CMURPathRef path1 = CMURPathNew();
     CMURTemplatesAdd(templates, "template1", path1, NULL);
     CMURPathDelete(path1);
     
-    STAssertEquals(templates->length, (unsigned int)1, @"Incorrect templates length after CMURTemplatesAdd()");
+    XCTAssertEqual(templates->length, (unsigned int)1, @"Incorrect templates length after CMURTemplatesAdd()");
     
     CMURTemplatesDelete(templates);
 }
@@ -57,15 +57,15 @@
 - (void)testCMURPathNew
 {
     CMURPathRef path = CMURPathNew();
-    STAssertTrue(path != NULL, @"CMURPathNew() returned NULL");
+    XCTAssertTrue(path != NULL, @"CMURPathNew() returned NULL");
     CMURPathDelete(path);
 }
 
 - (void)testCMURPathNewWithSize
 {
     CMURPathRef path = CMURPathNewWithSize(103);
-    STAssertTrue(path != NULL, @"CMURPathNewWithSize() returned NULL");
-    STAssertEquals(path->pointListSize, (unsigned int)103, @"Incorrect path pointListSize");
+    XCTAssertTrue(path != NULL, @"CMURPathNewWithSize() returned NULL");
+    XCTAssertEqual(path->pointListSize, (unsigned int)103, @"Incorrect path pointListSize");
     CMURPathDelete(path);
 }
 
@@ -79,8 +79,8 @@
     };
 
     CMURPathRef path = CMURPathNewWithPoints(points, pathLength);
-    STAssertTrue(path != NULL, @"CMURPathNewWithPoints() returned NULL");
-    STAssertEquals(path->length, (unsigned int)pathLength, @"Incorrect path length");
+    XCTAssertTrue(path != NULL, @"CMURPathNewWithPoints() returned NULL");
+    XCTAssertEqual(path->length, (unsigned int)pathLength, @"Incorrect path length");
     CMURPathDelete(path);
 }
 
@@ -95,8 +95,8 @@
     
     CMURPathRef path1 = CMURPathNewWithPoints(points, pathLength);
     CMURPathRef path2 = CMURPathCopy(path1);
-    STAssertTrue(path2 != NULL, @"CMURPathCopy() returned NULL");
-    STAssertEquals(path2->length, (unsigned int)pathLength, @"Incorrect path length");
+    XCTAssertTrue(path2 != NULL, @"CMURPathCopy() returned NULL");
+    XCTAssertEqual(path2->length, (unsigned int)pathLength, @"Incorrect path length");
     CMURPathDelete(path1);
     CMURPathDelete(path2);
 }
@@ -112,7 +112,7 @@
     
     CMURPathRef path = CMURPathNewWithPoints(points, pathLength);
     CMURPathAddPoint(path, 12.0f, 13.0f);
-    STAssertEquals(path->length, (unsigned int)(pathLength + 1), @"Incorrect path length after CMURPathAddPoint()");
+    XCTAssertEqual(path->length, (unsigned int)(pathLength + 1), @"Incorrect path length after CMURPathAddPoint()");
     CMURPathDelete(path);
 }
 
@@ -127,9 +127,9 @@
     CMURPathRef path = CMURPathNewWithPoints(points, pathLength);
     CMURTemplateRef template = CMURTemplateNew("testTemplate", path);
     
-    STAssertTrue(template != NULL, @"CMURTemplateNew() returned NULL");
-    STAssertEquals(template->path->length, path->length, @"Incorrect template path length");
-    STAssertEquals(strcmp(template->name, "testTemplate"), 0, @"Incorrect template name");
+    XCTAssertTrue(template != NULL, @"CMURTemplateNew() returned NULL");
+    XCTAssertEqual(template->path->length, path->length, @"Incorrect template path length");
+    XCTAssertEqual(strcmp(template->name, "testTemplate"), 0, @"Incorrect template name");
     
     CMURPathDelete(path);
     CMURTemplateDelete(template);
@@ -138,15 +138,15 @@
 - (void)testCMURResultNew
 {
     CMURResultRef result = CMURResultNew("testResult", 0.85f);
-    STAssertEquals(result->score, 0.85f, @"Incorrect result score");
-    STAssertEquals(strcmp(result->name, "testResult"), 0, @"Incorrect result name");
+    XCTAssertEqual(result->score, 0.85f, @"Incorrect result score");
+    XCTAssertEqual(strcmp(result->name, "testResult"), 0, @"Incorrect result name");
     CMURResultDelete(result);
 }
 
 - (void)testCMUROptionsNew
 {
     CMUROptionsRef options = CMUROptionsNew();
-    STAssertTrue(options != NULL, @"CMUROptionsNew() returned NULL");
+    XCTAssertTrue(options != NULL, @"CMUROptionsNew() returned NULL");
     
     if (options) {
 	options->rotationNormalisationDisabled = true;

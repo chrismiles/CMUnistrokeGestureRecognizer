@@ -86,8 +86,8 @@
 	// Disable Protractor (i.e. use Golden Section Search)
 	CMURResultRef result = unistrokeRecognizePathFromTemplates(path, templates, NULL);
 	
-	STAssertEqualsWithAccuracy(result->score, 0.992384f, FloatComparisonAccuracy, @"unistrokeRecognizePathFromTemplates() returned invalid result score");
-	STAssertTrue(strcmp(result->name, "template1") == 0, @"unistrokeRecognizePathFromTemplates() returned invalid result name");
+	XCTAssertEqualWithAccuracy(result->score, 0.992384f, FloatComparisonAccuracy, @"unistrokeRecognizePathFromTemplates() returned invalid result score");
+	XCTAssertTrue(strcmp(result->name, "template1") == 0, @"unistrokeRecognizePathFromTemplates() returned invalid result name");
 	
 	CMURResultDelete(result);
     }
@@ -99,8 +99,8 @@
 	options->useProtractor = true;
 	CMURResultRef result = unistrokeRecognizePathFromTemplates(path, templates, options);
 	
-	STAssertEqualsWithAccuracy(result->score, 0.987671f, FloatComparisonAccuracy, @"unistrokeRecognizePathFromTemplates() returned invalid result score");
-	STAssertTrue(strcmp(result->name, "template1") == 0, @"unistrokeRecognizePathFromTemplates() returned invalid result name");
+	XCTAssertEqualWithAccuracy(result->score, 0.987671f, FloatComparisonAccuracy, @"unistrokeRecognizePathFromTemplates() returned invalid result score");
+	XCTAssertTrue(strcmp(result->name, "template1") == 0, @"unistrokeRecognizePathFromTemplates() returned invalid result name");
 	
 	CMURResultDelete(result);
 	CMUROptionsDelete(options);
@@ -120,7 +120,7 @@
     const unsigned int resampleLength = 8;
     CMURPathRef resampledPath = unistrokeRecognizerResample(path, resampleLength);
     
-    STAssertEquals(resampleLength, resampledPath->length, @"Resampled path length not equal to requested length");
+    XCTAssertEqual(resampleLength, resampledPath->length, @"Resampled path length not equal to requested length");
 
     GLKVector2 expectedPoints[resampleLength] = {
 	GLKVector2Make(0.0f, 0.0f),
@@ -134,8 +134,8 @@
     };
     
     for (unsigned int i=0; i<resampledPath->length; i++) {
-	STAssertEqualsWithAccuracy(resampledPath->pointList[i].x, expectedPoints[i].x, FloatComparisonAccuracy, @"unistrokeRecognizerResample() returned incorrect value: %@ != %@", NSStringFromGLKVector2(resampledPath->pointList[i]), NSStringFromGLKVector2(expectedPoints[i]));
-	STAssertEqualsWithAccuracy(resampledPath->pointList[i].y, expectedPoints[i].y, FloatComparisonAccuracy, @"unistrokeRecognizerResample() returned incorrect value: %@ != %@", NSStringFromGLKVector2(resampledPath->pointList[i]), NSStringFromGLKVector2(expectedPoints[i]));
+	XCTAssertEqualWithAccuracy(resampledPath->pointList[i].x, expectedPoints[i].x, FloatComparisonAccuracy, @"unistrokeRecognizerResample() returned incorrect value: %@ != %@", NSStringFromGLKVector2(resampledPath->pointList[i]), NSStringFromGLKVector2(expectedPoints[i]));
+	XCTAssertEqualWithAccuracy(resampledPath->pointList[i].y, expectedPoints[i].y, FloatComparisonAccuracy, @"unistrokeRecognizerResample() returned incorrect value: %@ != %@", NSStringFromGLKVector2(resampledPath->pointList[i]), NSStringFromGLKVector2(expectedPoints[i]));
     }
 
     CMURPathDelete(path);
@@ -152,7 +152,7 @@
     const unsigned int resampleLength = 64;
     CMURPathRef resampledPath = unistrokeRecognizerResample(path, resampleLength);
     
-    STAssertEquals(resampleLength, resampledPath->length, @"Resampled path length not equal to requested length");
+    XCTAssertEqual(resampleLength, resampledPath->length, @"Resampled path length not equal to requested length");
     
     CMURPathDelete(path);
     CMURPathDelete(resampledPath);
@@ -170,7 +170,7 @@
     
     float expectedAngle = 0.785398f;
     
-    STAssertEqualsWithAccuracy(angle, expectedAngle, FloatComparisonAccuracy, @"testUnistrokeRecognizerIndicativeAngle() returned incorrect value");
+    XCTAssertEqualWithAccuracy(angle, expectedAngle, FloatComparisonAccuracy, @"testUnistrokeRecognizerIndicativeAngle() returned incorrect value");
 }
 
 - (void)testUnistrokeRecognizerDistanceAtBestAngle
@@ -194,7 +194,7 @@
     
     float expectedDistance = 7.071068f;
     
-    STAssertEqualsWithAccuracy(distance, expectedDistance, FloatComparisonAccuracy, @"unistrokeRecognizerDistanceAtBestAngle() returned incorrect value");
+    XCTAssertEqualWithAccuracy(distance, expectedDistance, FloatComparisonAccuracy, @"unistrokeRecognizerDistanceAtBestAngle() returned incorrect value");
 }
 
 - (void)testUnistrokeRecognizerPathDistance
@@ -216,7 +216,7 @@
     
     float expectedDistance = sqrtf(5.0f*5.0f + 5.0f*5.0f);
     
-    STAssertEqualsWithAccuracy(pathDistance, expectedDistance, FloatComparisonAccuracy, @"unistrokeRecognizerPathDistance() returned incorrect value");
+    XCTAssertEqualWithAccuracy(pathDistance, expectedDistance, FloatComparisonAccuracy, @"unistrokeRecognizerPathDistance() returned incorrect value");
 }
 
 - (void)testunistrokeRecognizerPathLength
@@ -231,7 +231,7 @@
     
     float expectedLength = 18.2514077f;
     
-    STAssertEqualsWithAccuracy(length, expectedLength, FloatComparisonAccuracy, @"testunistrokeRecognizerPathLength() returned incorrect value");
+    XCTAssertEqualWithAccuracy(length, expectedLength, FloatComparisonAccuracy, @"testunistrokeRecognizerPathLength() returned incorrect value");
 }
 
 - (void)testUnistrokeRecognizerCentroid
@@ -246,8 +246,8 @@
     
     GLKVector2 expected = GLKVector2Make(5.0f, 5.0f);
     
-    STAssertEqualsWithAccuracy(centroid.x, expected.x, FloatComparisonAccuracy, @"unistrokeRecognizerCentroid() returned incorrect value");
-    STAssertEqualsWithAccuracy(centroid.y, expected.y, FloatComparisonAccuracy, @"unistrokeRecognizerCentroid() returned incorrect value");
+    XCTAssertEqualWithAccuracy(centroid.x, expected.x, FloatComparisonAccuracy, @"unistrokeRecognizerCentroid() returned incorrect value");
+    XCTAssertEqualWithAccuracy(centroid.y, expected.y, FloatComparisonAccuracy, @"unistrokeRecognizerCentroid() returned incorrect value");
 }
 
 - (void)testUnistrokeRecognizerDistanceAtAngle
@@ -272,7 +272,7 @@
     
     float expectedDistance = 7.148788f;
     
-    STAssertEqualsWithAccuracy(distance, expectedDistance, FloatComparisonAccuracy, @"unistrokeRecognizerDistanceAtAngle() returned incorrect value");
+    XCTAssertEqualWithAccuracy(distance, expectedDistance, FloatComparisonAccuracy, @"unistrokeRecognizerDistanceAtAngle() returned incorrect value");
 }
 
 - (void)testUnistrokeRecognizerRotateBy
@@ -290,8 +290,8 @@
     CMURPathAddPoint(expectedPath, 3.96044f, 9.89074f);
 
     for (unsigned int i=0; i < rotatedPath->length; i++) {
-	STAssertEqualsWithAccuracy(rotatedPath->pointList[i].x, expectedPath->pointList[i].x, FloatComparisonAccuracy, @"unistrokeRecognizerRotateBy() returned incorrect value: %@ != %@", NSStringFromGLKVector2(rotatedPath->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
-	STAssertEqualsWithAccuracy(rotatedPath->pointList[i].y, expectedPath->pointList[i].y, FloatComparisonAccuracy, @"unistrokeRecognizerRotateBy() returned incorrect value: %@ != %@", NSStringFromGLKVector2(rotatedPath->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
+	XCTAssertEqualWithAccuracy(rotatedPath->pointList[i].x, expectedPath->pointList[i].x, FloatComparisonAccuracy, @"unistrokeRecognizerRotateBy() returned incorrect value: %@ != %@", NSStringFromGLKVector2(rotatedPath->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
+	XCTAssertEqualWithAccuracy(rotatedPath->pointList[i].y, expectedPath->pointList[i].y, FloatComparisonAccuracy, @"unistrokeRecognizerRotateBy() returned incorrect value: %@ != %@", NSStringFromGLKVector2(rotatedPath->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
     }
     
     CMURPathDelete(rotatedPath);
@@ -310,10 +310,10 @@
     
     CMURPathDelete(path);
     
-    STAssertEqualsWithAccuracy(box.x, 0.0f, FloatComparisonAccuracy, @"testUnistrokeRecognizerBoundingBox() returned incorrect value x: %f != %f", box.x, 0.0f);
-    STAssertEqualsWithAccuracy(box.y, 0.0f, FloatComparisonAccuracy, @"testUnistrokeRecognizerBoundingBox() returned incorrect value y: %f != %f", box.y, 0.0f);
-    STAssertEqualsWithAccuracy(box.width, 10.0f, FloatComparisonAccuracy, @"testUnistrokeRecognizerBoundingBox() returned incorrect value width: %f != %f", box.width, 10.0f);
-    STAssertEqualsWithAccuracy(box.height, 10.0f, FloatComparisonAccuracy, @"testUnistrokeRecognizerBoundingBox() returned incorrect value height: %f != %f", box.height, 10.0f);
+    XCTAssertEqualWithAccuracy(box.x, 0.0f, FloatComparisonAccuracy, @"testUnistrokeRecognizerBoundingBox() returned incorrect value x: %f != %f", box.x, 0.0f);
+    XCTAssertEqualWithAccuracy(box.y, 0.0f, FloatComparisonAccuracy, @"testUnistrokeRecognizerBoundingBox() returned incorrect value y: %f != %f", box.y, 0.0f);
+    XCTAssertEqualWithAccuracy(box.width, 10.0f, FloatComparisonAccuracy, @"testUnistrokeRecognizerBoundingBox() returned incorrect value width: %f != %f", box.width, 10.0f);
+    XCTAssertEqualWithAccuracy(box.height, 10.0f, FloatComparisonAccuracy, @"testUnistrokeRecognizerBoundingBox() returned incorrect value height: %f != %f", box.height, 10.0f);
 }
 
 - (void)testUnistrokeRecognizerScaleTo
@@ -331,8 +331,8 @@
     CMURPathAddPoint(expectedPath, 125.0f, 250.0f);
 
     for (unsigned int i=0; i < path->length; i++) {
-	STAssertEqualsWithAccuracy(path->pointList[i].x, expectedPath->pointList[i].x, FloatComparisonAccuracy, @"testUnistrokeRecognizerScaleTo() returned incorrect value: %@ != %@", NSStringFromGLKVector2(path->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
-	STAssertEqualsWithAccuracy(path->pointList[i].y, expectedPath->pointList[i].y, FloatComparisonAccuracy, @"testUnistrokeRecognizerScaleTo() returned incorrect value: %@ != %@", NSStringFromGLKVector2(path->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
+	XCTAssertEqualWithAccuracy(path->pointList[i].x, expectedPath->pointList[i].x, FloatComparisonAccuracy, @"testUnistrokeRecognizerScaleTo() returned incorrect value: %@ != %@", NSStringFromGLKVector2(path->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
+	XCTAssertEqualWithAccuracy(path->pointList[i].y, expectedPath->pointList[i].y, FloatComparisonAccuracy, @"testUnistrokeRecognizerScaleTo() returned incorrect value: %@ != %@", NSStringFromGLKVector2(path->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
     }
     
     CMURPathDelete(path);
@@ -356,8 +356,8 @@
     CMURPathAddPoint(expectedPath, 25.0f, 40.0f);
 
     for (unsigned int i=0; i < path->length; i++) {
-	STAssertEqualsWithAccuracy(path->pointList[i].x, expectedPath->pointList[i].x, FloatComparisonAccuracy, @"testUnistrokeRecognizerTranslateTo() returned incorrect value: %@ != %@", NSStringFromGLKVector2(path->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
-	STAssertEqualsWithAccuracy(path->pointList[i].y, expectedPath->pointList[i].y, FloatComparisonAccuracy, @"testUnistrokeRecognizerTranslateTo() returned incorrect value: %@ != %@", NSStringFromGLKVector2(path->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
+	XCTAssertEqualWithAccuracy(path->pointList[i].x, expectedPath->pointList[i].x, FloatComparisonAccuracy, @"testUnistrokeRecognizerTranslateTo() returned incorrect value: %@ != %@", NSStringFromGLKVector2(path->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
+	XCTAssertEqualWithAccuracy(path->pointList[i].y, expectedPath->pointList[i].y, FloatComparisonAccuracy, @"testUnistrokeRecognizerTranslateTo() returned incorrect value: %@ != %@", NSStringFromGLKVector2(path->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
     }
     
     CMURPathDelete(path);
@@ -379,8 +379,8 @@
     CMURPathAddPoint(expectedPath, 0.316228f, 0.632456f);
     
     for (unsigned int i=0; i < vectorized->length; i++) {
-	STAssertEqualsWithAccuracy(vectorized->pointList[i].x, expectedPath->pointList[i].x, FloatComparisonAccuracy, @"testUnistrokeRecognizerVectorize() returned incorrect value: %@ != %@", NSStringFromGLKVector2(vectorized->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
-	STAssertEqualsWithAccuracy(vectorized->pointList[i].y, expectedPath->pointList[i].y, FloatComparisonAccuracy, @"testUnistrokeRecognizerVectorize() returned incorrect value: %@ != %@", NSStringFromGLKVector2(vectorized->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
+	XCTAssertEqualWithAccuracy(vectorized->pointList[i].x, expectedPath->pointList[i].x, FloatComparisonAccuracy, @"testUnistrokeRecognizerVectorize() returned incorrect value: %@ != %@", NSStringFromGLKVector2(vectorized->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
+	XCTAssertEqualWithAccuracy(vectorized->pointList[i].y, expectedPath->pointList[i].y, FloatComparisonAccuracy, @"testUnistrokeRecognizerVectorize() returned incorrect value: %@ != %@", NSStringFromGLKVector2(vectorized->pointList[i]), NSStringFromGLKVector2(expectedPath->pointList[i]));
     }
     
     CMURPathDelete(vectorized);
@@ -411,7 +411,7 @@
     
     float expectedDistance = 0.1688662f;
     
-    STAssertEqualsWithAccuracy(distance, expectedDistance, FloatComparisonAccuracy, @"testUnistrokeRecognizerOptimalCosineDistance() returned incorrect value");
+    XCTAssertEqualWithAccuracy(distance, expectedDistance, FloatComparisonAccuracy, @"testUnistrokeRecognizerOptimalCosineDistance() returned incorrect value");
 }
 
 @end

@@ -10,10 +10,10 @@
 		832BBED716292AD6002F6542 /* CMUnistrokeRecognizer.c in Sources */ = {isa = PBXBuildFile; fileRef = 832BBED216292AD6002F6542 /* CMUnistrokeRecognizer.c */; };
 		832BBED816292AD6002F6542 /* CMUnistrokeRecognizerTypes.c in Sources */ = {isa = PBXBuildFile; fileRef = 832BBED516292AD6002F6542 /* CMUnistrokeRecognizerTypes.c */; };
 		832BBEDB16297BC1002F6542 /* CMUnistrokeRecognizerTypesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 832BBEDA16297BC1002F6542 /* CMUnistrokeRecognizerTypesTests.m */; };
+		8349C21418DEA8D200F1CED4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8349C21318DEA8D200F1CED4 /* XCTest.framework */; };
 		837E2871160EE03600017FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E2870160EE03600017FFB /* Foundation.framework */; };
 		837E2876160EE03600017FFB /* CMUnistrokeGestureRecognizer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 837E2875160EE03600017FFB /* CMUnistrokeGestureRecognizer.h */; };
 		837E2878160EE03600017FFB /* CMUnistrokeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 837E2877160EE03600017FFB /* CMUnistrokeGestureRecognizer.m */; };
-		837E2880160EE03600017FFB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E287F160EE03600017FFB /* SenTestingKit.framework */; };
 		837E2883160EE03600017FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E2870160EE03600017FFB /* Foundation.framework */; };
 		837E2886160EE03600017FFB /* libCMUnistrokeGestureRecognizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E286D160EE03600017FFB /* libCMUnistrokeGestureRecognizer.a */; };
 		837E288C160EE03600017FFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 837E288A160EE03600017FFB /* InfoPlist.strings */; };
@@ -60,14 +60,14 @@
 		832BBED616292AD6002F6542 /* CMUnistrokeRecognizerTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUnistrokeRecognizerTypes.h; sourceTree = "<group>"; };
 		832BBED916297BC1002F6542 /* CMUnistrokeRecognizerTypesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUnistrokeRecognizerTypesTests.h; sourceTree = "<group>"; };
 		832BBEDA16297BC1002F6542 /* CMUnistrokeRecognizerTypesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUnistrokeRecognizerTypesTests.m; sourceTree = "<group>"; };
+		8349C21318DEA8D200F1CED4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		83787192163B6C28002A9A6F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		837E286D160EE03600017FFB /* libCMUnistrokeGestureRecognizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCMUnistrokeGestureRecognizer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		837E2870160EE03600017FFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		837E2874160EE03600017FFB /* CMUnistrokeGestureRecognizer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMUnistrokeGestureRecognizer-Prefix.pch"; sourceTree = "<group>"; };
 		837E2875160EE03600017FFB /* CMUnistrokeGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMUnistrokeGestureRecognizer.h; sourceTree = "<group>"; };
 		837E2877160EE03600017FFB /* CMUnistrokeGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMUnistrokeGestureRecognizer.m; sourceTree = "<group>"; };
-		837E287E160EE03600017FFB /* CMUnistrokeGestureRecognizerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMUnistrokeGestureRecognizerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		837E287F160EE03600017FFB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		837E287E160EE03600017FFB /* CMUnistrokeGestureRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMUnistrokeGestureRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		837E2889160EE03600017FFB /* CMUnistrokeGestureRecognizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CMUnistrokeGestureRecognizerTests-Info.plist"; sourceTree = "<group>"; };
 		837E288B160EE03600017FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		837E288D160EE03600017FFB /* CMUnistrokeGestureRecognizerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMUnistrokeGestureRecognizerTests.h; sourceTree = "<group>"; };
@@ -96,10 +96,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8349C21418DEA8D200F1CED4 /* XCTest.framework in Frameworks */,
 				838067501624D10100CB549E /* CoreGraphics.framework in Frameworks */,
 				83982027160FCCB200346564 /* GLKit.framework in Frameworks */,
 				837E28EC160EF8DC00017FFB /* UIKit.framework in Frameworks */,
-				837E2880160EE03600017FFB /* SenTestingKit.framework in Frameworks */,
 				837E2883160EE03600017FFB /* Foundation.framework in Frameworks */,
 				837E2886160EE03600017FFB /* libCMUnistrokeGestureRecognizer.a in Frameworks */,
 			);
@@ -135,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				837E286D160EE03600017FFB /* libCMUnistrokeGestureRecognizer.a */,
-				837E287E160EE03600017FFB /* CMUnistrokeGestureRecognizerTests.octest */,
+				837E287E160EE03600017FFB /* CMUnistrokeGestureRecognizerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,11 +143,11 @@
 		837E286F160EE03600017FFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8349C21318DEA8D200F1CED4 /* XCTest.framework */,
 				8380674F1624D10100CB549E /* CoreGraphics.framework */,
 				837E28E3160EEEDB00017FFB /* UIKit.framework */,
 				837E28E1160EEEC900017FFB /* GLKit.framework */,
 				837E2870160EE03600017FFB /* Foundation.framework */,
-				837E287F160EE03600017FFB /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -232,8 +232,8 @@
 			);
 			name = CMUnistrokeGestureRecognizerTests;
 			productName = CMUnistrokeGestureRecognizerTests;
-			productReference = 837E287E160EE03600017FFB /* CMUnistrokeGestureRecognizerTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 837E287E160EE03600017FFB /* CMUnistrokeGestureRecognizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -242,6 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CMUGR;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Chris Miles";
 			};
@@ -475,12 +476,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer-Prefix.pch";
 				INFOPLIST_FILE = "CMUnistrokeGestureRecognizerTests/CMUnistrokeGestureRecognizerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -490,12 +492,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer-Prefix.pch";
 				INFOPLIST_FILE = "CMUnistrokeGestureRecognizerTests/CMUnistrokeGestureRecognizerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
